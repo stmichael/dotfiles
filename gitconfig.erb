@@ -11,7 +11,7 @@
   branch = auto
 [core]
   excludesfile = <%= ENV['HOME'] %>/.gitignore
-  editor = /usr/local/Cellar/emacs/<%= `emacsclient -v | sed 's/emacsclient //g'`.strip %>/bin/emacsclient
+  editor = /usr/local/Cellar/emacs/<%= `emacsclient --version | sed 's/emacsclient //g'`.strip %>/bin/emacsclient
   autocrlf = input
 [apply]
   whitespace = nowarn
