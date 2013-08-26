@@ -24,11 +24,12 @@
         haml-and-sass
         yaml
         snippets
+        php
 
         ;; cabbage-developer
         ;; rails
         ;; latex
-        ;; org
+        org
         ;; plone
         ;; eclim
         ;; eclim-auto-complete
