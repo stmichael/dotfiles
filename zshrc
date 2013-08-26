@@ -25,3 +25,4 @@ unsetopt auto_name_dirs
 PATH=/usr/local/bin:$PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+NODE_PATH="/usr/local/share/npm/lib/node_modules"
