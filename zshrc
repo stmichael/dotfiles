@@ -74,3 +74,5 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 source $HOME/.zsh/aliases
+
+alias rake='noglob rake'
