@@ -10,8 +10,7 @@
   status = auto
   branch = auto
 [core]
-  excludesfile = <%= ENV['HOME'] %>/.gitignore
-  editor = /usr/local/Cellar/emacs/<%= `emacsclient --version | sed 's/emacsclient //g'`.strip %>/bin/emacsclient
+  editor = atom --wait
   autocrlf = input
 [apply]
   whitespace = nowarn
@@ -23,9 +22,6 @@
 	default = tracking
 [branch]
 	autosetuprebase = always
-[github]
-  user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [mergetool "ediff"]
   cmd = emacsclient --eval \"(git-mergetool-emacsclient-ediff \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" \\\"$MERGED\\\")\"
   trustExitCode = true
