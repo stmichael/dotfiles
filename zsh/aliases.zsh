@@ -1,6 +1,8 @@
 # general
 alias ll='ls -lah'
 alias la='ls -a'
+alias ..='cd ..'
+alias ....='cd ../..'
 
 # git
 alias ga='git add'
