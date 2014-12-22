@@ -4,8 +4,8 @@
 . ~/.zsh/history.zsh
 . ~/.zsh/theme.zsh
 
-# User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# --------------------
+# custom configuration
+# --------------------
 
 eval "$(rbenv init - zsh)"
