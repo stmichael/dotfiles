@@ -56,7 +56,6 @@ bindkey "^[[3~" delete-char
 # User configuration
 
 . $HOME/.zsh/aliases
-alias rake='noglob rake'
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
