@@ -9,6 +9,9 @@ fpath=(~/.zsh/git $fpath)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 
+. ~/.zsh/history.zsh
+
+
 # Enable colors
 autoload colors; colors;
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
