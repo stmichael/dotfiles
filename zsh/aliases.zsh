@@ -26,6 +26,7 @@ alias rg='bin/rails g'
 alias cpw='bin/cucumber -p wip'
 alias rake='noglob rake'
 alias bundle='noglob bundle'
+alias be='bundle exec'
 
 # karma
 alias karma='node_modules/karma/bin/karma start -single-run karma.coffee'
