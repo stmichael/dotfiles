@@ -30,3 +30,12 @@ alias be='bundle exec'
 
 # karma
 alias karma='node_modules/karma/bin/karma start -single-run karma.coffee'
+
+function c () {
+  cd ~/Projects/$1;
+}
+function _c () {
+  _files -W ~/Projects -/
+}
+compdef _c c
+alias c='nocorrect c'
