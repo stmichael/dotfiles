@@ -3,7 +3,7 @@ autoload -U compinit
 compinit
 
 # add git autocompletion
-fpath=(~/.zsh/git $fpath)
+fpath=(~/.zsh/git-completion.zsh $fpath)
 
 # make autocompletion case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'

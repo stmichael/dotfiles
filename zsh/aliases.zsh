@@ -31,6 +31,10 @@ alias be='bundle exec'
 # karma
 alias karma='node_modules/karma/bin/karma start -single-run karma.coffee'
 
+# docker
+alias dx='docker-compose exec web'
+alias dxbe='docker-compose exec web bundle exec'
+
 function c () {
   cd ~/Projects/$1;
 }
