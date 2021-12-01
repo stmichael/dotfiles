@@ -1,16 +1,14 @@
 [user]
-  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = Michael Stämpfli
+  email = michael.staempfli@gmail.com
 [alias]
   co = checkout
-  build = push -f origin HEAD:build/yse0217
-  merge-diff = !sh -c 'git diff "$1^1"..."$1^2" "$@"' -
 [color]
   diff = auto
   status = auto
   branch = auto
 [core]
-  editor = atom --wait
+  editor = code --wait
   autocrlf = input
 [apply]
   whitespace = nowarn
