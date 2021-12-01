@@ -26,14 +26,15 @@ alias rg='bin/rails g'
 alias cpw='bin/cucumber -p wip'
 alias rake='noglob rake'
 alias bundle='noglob bundle'
-alias be='bundle exec'
+alias bx='bundle exec'
 
 # karma
 alias karma='node_modules/karma/bin/karma start -single-run karma.coffee'
 
 # docker
-alias dx='docker-compose exec web'
-alias dxbe='docker-compose exec web bundle exec'
+alias up='docker-compose up'
+alias down='docker-compose down'
+alias dx='docker-compose exec'
 
 function c () {
   cd ~/Projects/$1;
