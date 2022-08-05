@@ -1,0 +1,199 @@
+// Place your key bindings in this file to override the defaults
+// The following extensions are needed: emacs-region, ParagraphJump
+[
+    // Reset impractical key bindings
+    {
+        "key": "shift+alt+a",
+        "command": "-editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // Cursor movement
+    {
+        "key": "alt+a",
+        "command": "cursorLeft",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+a",
+        "command": "cursorLeftSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+n",
+        "command": "cursorRight",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+n",
+        "command": "cursorRightSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+t",
+        "command": "cursorDown",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+t",
+        "command": "cursorDownSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+c",
+        "command": "cursorUp",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+c",
+        "command": "cursorUpSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+shift+a",
+        "command": "cursorLineStart",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+shift+a",
+        "command": "cursorLineStartSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+shift+n",
+        "command": "cursorLineEnd",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+shift+n",
+        "command": "cursorLineEndSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+shift+c",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+shift+c",
+        "command": "cursorPageUpSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+shift+t",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+shift+t",
+        "command": "cursorPageDownSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+d",
+        "command": "cursorTop",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+d",
+        "command": "cursorTopSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+shift+d",
+        "command": "cursorBottom",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+shift+d",
+        "command": "cursorBottomSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+
+    {
+        "key": "alt+g",
+        "command": "cursorWordLeft",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+g",
+        "command": "cursorWordLeftSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+r",
+        "command": "cursorWordRight",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+r",
+        "command": "cursorWordRightSelect",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+shift+g",
+        "command": "paragraphjump.up",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+shift+g",
+        "command": "paragraphjump.selectup",
+        "when": "editorTextFocus && inRegionMode"
+    },
+    {
+        "key": "alt+shift+r",
+        "command": "paragraphjump.down",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+shift+r",
+        "command": "paragraphjump.selectdown",
+        "when": "editorTextFocus && inRegionMode"
+    },
+
+    {
+        "key": "alt+t",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+
+    // // Text modification
+    {
+        "key": "alt+u",
+        "command": "deleteRight"
+    },
+    {
+        "key": "alt+space",
+        "command": "emacs.startRegionMode",
+        "when": "editorTextFocus && !inRegionMode"
+    },
+    {
+        "key": "alt+space",
+        "command": "emacs.exitRegionMode",
+        "when": "editorTextFocus && inRegionMode"
+    },
+
+    // // Tab handling
+    {
+        "key": "ctrl+b left",
+        "command": "workbench.action.splitEditorLeft"
+    },
+    {
+        "key": "ctrl+b right",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.focusRightGroup"
+    }
+
+]
