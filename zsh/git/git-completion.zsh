@@ -1,4 +1,3 @@
-#compdef git gitk
 
 # zsh completion wrapper for git
 #
