@@ -1,0 +1,244 @@
+// Place your key bindings in this file to override the defaults
+// The following extensions are needed: emacs-region, ParagraphJump
+[
+    // Cursor movement
+    {
+        "key": "alt+h",
+        "command": "cursorMove",
+        "args": {
+            "to": "left"
+        },
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+h",
+        "command": "cursorMove",
+        "args": {
+            "to": "left",
+            "select": true
+        },
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+n",
+        "command": "cursorMove",
+        "args": {
+            "to": "right"
+        },
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+n",
+        "command": "cursorMove",
+        "args": {
+            "to": "right",
+            "select": true
+        },
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+t",
+        "command": "cursorMove",
+        "args": {
+            "to": "down"
+        },
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+t",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "select": true
+        },
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+c",
+        "command": "cursorMove",
+        "args": {
+            "to": "up"
+        },
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+c",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "select": true
+        },
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+h",
+        "command": "cursorMove",
+        "args": {
+            "to": "wrappedLineStart"
+        },
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+h",
+        "command": "cursorMove",
+        "args": {
+            "to": "wrappedLineStart",
+            "select": true
+        },
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+n",
+        "command": "cursorMove",
+        "args": {
+            "to": "wrappedLineEnd"
+        },
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+n",
+        "command": "cursorMove",
+        "args": {
+            "to": "wrappedLineEnd",
+            "select": true
+        },
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+c",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+c",
+        "command": "cursorPageUpSelect",
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+t",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+t",
+        "command": "cursorPageDownSelect",
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+d",
+        "command": "cursorTop",
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+d",
+        "command": "cursorTopSelect",
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+d",
+        "command": "cursorBottom",
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+d",
+        "command": "cursorBottomSelect",
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+
+    {
+        "key": "alt+g",
+        "command": "cursorWordLeft",
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+g",
+        "command": "cursorWordLeftSelect",
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+r",
+        "command": "cursorWordRight",
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+r",
+        "command": "cursorWordRightSelect",
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+g",
+        "command": "cursorMove",
+        "args": {
+            "to": "prevBlankLine",
+            "select": false
+        },
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+g",
+        "command": "cursorMove",
+        "args": {
+            "to": "prevBlankLine",
+            "select": true
+        },
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+r",
+        "command": "cursorMove",
+        "args": {
+            "to": "nextBlankLine",
+            "select": false
+        },
+        "when": "editorTextFocus && !incremental-selection.active"
+    },
+    {
+        "key": "alt+shift+r",
+        "command": "cursorMove",
+        "args": {
+            "to": "nextBlankLine",
+            "select": true
+        },
+        "when": "editorTextFocus && incremental-selection.active"
+    },
+
+    {
+        "key": "alt+t",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+
+    // Text modification
+    {
+        "key": "alt+u",
+        "command": "deleteRight"
+    },
+    {
+        "key": "alt+space",
+        "command": "incremental-selection.toggle",
+        "when": "editorTextFocus"
+    },
+
+    // Tab handling
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.moveEditorToRightGroup"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "workbench.action.moveEditorToLeftGroup"
+    }
+]

@@ -1,0 +1,6 @@
+{
+    "git.openRepositoryInParentFolders": "never",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "explorer.confirmDragAndDrop": false
+}
