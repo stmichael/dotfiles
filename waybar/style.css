@@ -1,0 +1,46 @@
+* {
+    font-size: 13px;
+    font-family: Roboto;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-right > widget > .module {
+    padding: 0 8px;
+}
+
+#workspaces button {
+    color: white;
+    background: transparent;
+}
+
+#workspaces button.active {
+    background: rgba(128, 128, 128, 0.5);
+    border-bottom: 2px solid white;
+}
+
+#workspaces button.urgent {
+    border-bottom: 2px solid rgb(97, 12, 12);
+}
+
+#battery.charging, #battery.plugged {
+    color: rgb(0, 70, 0);
+}
+
+#battery.warning:not(.charging) {
+    color: rgb(204, 137, 13);
+}
+
+#battery.critical:not(.charging) {
+    color: rgb(117, 26, 26);
+}

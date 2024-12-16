@@ -1,4 +1,5 @@
 link_file() {
+    mkdir -p "$(dirname "$2")"
     SOURCE=$(absolute_path "$1")
     TARGET=$(absolute_path "$2")
 
