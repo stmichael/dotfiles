@@ -30,11 +30,11 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-    border-bottom: 2px solid rgb(97, 12, 12);
+    border-bottom: 2px solid rgb(223, 54, 54);
 }
 
 #battery.charging, #battery.plugged {
-    color: rgb(0, 70, 0);
+    color: rgb(38, 219, 38);
 }
 
 #battery.warning:not(.charging) {
@@ -42,5 +42,5 @@ window#waybar.hidden {
 }
 
 #battery.critical:not(.charging) {
-    color: rgb(117, 26, 26);
+    color: rgb(214, 59, 59);
 }
