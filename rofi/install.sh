@@ -9,3 +9,4 @@ source ../utils.sh
 
 link_file ./config.rasi ~/.config/rofi/config.rasi
 link_file ./theme.rasi ~/.config/rofi/theme.rasi
+link_file ./hyprland-windows.sh ~/.config/rofi/scripts/hyprland-windows.sh
