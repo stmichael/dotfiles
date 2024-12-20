@@ -66,7 +66,6 @@ sudo pacman -S hypridle
 
 # workspace setup
 # ly theme
-# disable focus by mouse movement
 # bluetooth
 # media keys
 
