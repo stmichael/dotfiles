@@ -16,4 +16,4 @@ sudo pacman -S code
 # nordvpn
 # vpn clients (dv bern)
 # vlc
-
+# keep vscode delete dialog focus

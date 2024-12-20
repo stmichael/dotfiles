@@ -64,9 +64,14 @@ sudo pacman -S brightnessctl
 # hypridle
 sudo pacman -S hypridle
 
+# bluetooth
+sudo pacman -S bluez bluez-utils
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+yay -S bluetuith
+
 # workspace setup
 # ly theme
-# bluetooth
 # media keys
 
 # Ideas

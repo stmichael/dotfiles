@@ -15,6 +15,7 @@
     "modules-right": [
         // "mpd",
         "hyprland/language",
+        "bluetooth",
         "network",
         "cpu",
         "memory",
@@ -60,6 +61,16 @@
         "format-muted": "0% \ueee8 {format_source}",
         "format-source": "{volume}% \uf130",
         "format-source-muted": "0% \uf131"
+    },
+    "bluetooth": {
+        "format-off": "\udb80\udcb2",
+        "format-on": "\udb80\udcaf",
+        "format-connected": "\udb80\udcb1 {device_battery_percentage}%",
+        "tooltip-format": "{num_connections} devices connected",
+    	"tooltip-format-connected": "{device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
+        "on-click": "alacritty -e bluetuith"
     },
     "cpu": {
         "format": "{usage}% \uf2db",
