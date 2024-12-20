@@ -13,7 +13,7 @@
     ],
     "modules-center": [],
     "modules-right": [
-        "mpd",
+        // "mpd",
         "pulseaudio",
         "hyprland/language",
         "network",
@@ -30,69 +30,56 @@
         "format": "{name}"
     },
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) \u2e28{songPosition}|{queueLength}\u2e29 {volume}% \uf001",
+        "format-disconnected": "Disconnected \uf001",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped \uf001",
         "unknown-tag": "N/A",
         "interval": 5,
         "consume-icons": {
-            "on": " "
+            "on": "\uf0c4 "
         },
         "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
+            "off": "<span color=\"#f53c3c\">\uf074</span> ",
+            "on": "\uf074 "
         },
         "repeat-icons": {
-            "on": " "
+            "on": "\uf01e "
         },
         "single-icons": {
-            "on": "1 "
+            "on": "\uf01e1 "
         },
         "state-icons": {
-            "paused": "",
-            "playing": ""
+            "paused": "\uf04c",
+            "playing": "\uf04b"
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+        "format": "{volume}% \uf027 {format_source}",
+        "format-muted": "0% \ueee8 {format_source}",
+        "format-source": "{volume}% \uf130",
+        "format-source-muted": "0% \uf131"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% \uf2db",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% \uf0c9"
     },
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        // "format-critical": "{temperatureC}\u00b0C {icon}",
+        "format": "{temperatureC}\u00b0C {icon}",
+        "format-icons": ["\uf76b", "\uf2c9", "\uf769"]
     },
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["\ue38d", "\ue3d3", "\ue3d1", "\ue3cf", "\ue3ce", "\ue3cd", "\ue3ca", "\ue3c8", "\ue39b"]
     },
     "battery": {
         "interval": 20,
@@ -102,36 +89,36 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% \uf5e7",
+        "format-plugged": "{capacity}% \uf1e6",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
     },
     "power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
+        "default": "\uf0e7",
+        "performance": "\uf0e7",
+        "balanced": "\uf24e",
+        "power-saver": "\uf06c"
       }
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-wifi": "{essid} ({signalStrength}%) \uf1eb",
+        "format-ethernet": "{ipaddr}/{cidr} \uf796",
+        "tooltip-format": "{ifname} via {gwaddr} \uf796",
+        "format-linked": "{ifname} (No IP) \uf796",
+        "format-disconnected": "Disconnected \u26a0"
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%Y-%m-%d %H:%M}"
     },
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : "\u23fb",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/modules/power-menu.xml", // Menu file in resources folder
