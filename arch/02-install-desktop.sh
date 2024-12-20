@@ -62,11 +62,13 @@ sudo pacman -S mako libnotify
 sudo pacman -S brightnessctl
 
 # hypridle
-# sound
+sudo pacman -S hypridle
+
 # workspace setup
 # ly theme
 # disable focus by mouse movement
 # bluetooth
+# media keys
 
 # Ideas
 # -----
