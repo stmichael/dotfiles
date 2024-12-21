@@ -2,5 +2,6 @@
     "git.openRepositoryInParentFolders": "never",
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "editor.tabSize": 2
 }
