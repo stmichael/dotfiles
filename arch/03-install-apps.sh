@@ -9,9 +9,11 @@ sudo pacman -S code
 sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting fzf
 chsh -s /bin/zsh
 
-# zsh
-# yazi
 # lazygit
+sudo pacman -S lazygit
+
+# finish zsh
+# yazi
 
 # Citrix
 # slack
