@@ -1,0 +1,14 @@
+# Generic configuration
+source "$ZSH_CONFIG_HOME/config.zsh"
+
+# History
+source "$ZSH_CONFIG_HOME/history.zsh"
+
+# Completion
+source "$ZSH_CONFIG_HOME/completion.zsh"
+
+# Key bindings
+source "$ZSH_CONFIG_HOME/key-bindings.zsh"
+
+# Prompt
+source "$ZSH_CONFIG_HOME/prompt.zsh"
