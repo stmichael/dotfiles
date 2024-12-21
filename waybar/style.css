@@ -16,7 +16,7 @@ window#waybar.hidden {
 }
 
 .modules-right > widget > .module {
-    padding: 0 8px;
+    padding: 0 4px;
 }
 
 #workspaces button {

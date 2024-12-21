@@ -118,9 +118,8 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) \uf1eb",
-        "format-ethernet": "{ipaddr}/{cidr} \uf796",
-        "tooltip-format": "{ifname} via {gwaddr} \uf796",
+        "format-wifi": "{essid} \uf1eb",
+        "format-ethernet": "{ipaddr} \uf796",
         "format-linked": "{ifname} (No IP) \uf796",
         "format-disconnected": "Disconnected \u26a0"
     },
