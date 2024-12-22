@@ -30,7 +30,7 @@ prompt_git() {
     local deleted=$(echo $git_status | grep -c '^ D')
     local untracked=$(echo $git_status | grep -c '^??')
 
-    print "\ue725 $branch \uea7f $untracked \uea73 $modified \uea81 $deleted\n#AA65B6"
+    print "\ue725 $branch \uea7f $untracked \uea73 $modified \uea81 $deleted\n#46AFA5"
   fi
 }
 
