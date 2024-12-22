@@ -31,6 +31,13 @@ sudo systemctl enable ly
 sudo systemctl start ly
 # -> change `animation=matrix` in /etc/ly/config.ini
 
+# Add firmware update daemon
+sudo pacman -S fwupd udisks2
+sudo systemctl enable fwupd
+sudo systemctl start fwupd
+sudo systemctl enable udisks2
+sudo systemctl start udisks2
+
 # desktop environment
 sudo pacman -S hyprland hyprlock waybar
 
@@ -72,5 +79,3 @@ sudo systemctl start bluetooth
 yay -S bluetuith
 
 # workspace setup
-# media keys
-# fingerprint reader?
