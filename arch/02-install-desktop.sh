@@ -43,7 +43,7 @@ sudo systemctl enable power-profiles-daemon
 sudo systemctl start power-profiles-daemon
 
 # sound setup
-sudo pacman -S alsa-lib sof-firmware pipewire pipewire-alsa pipewire-pulse wireplumber
+sudo pacman -S alsa-lib sof-firmware pipewire pipewire-alsa pipewire-pulse wireplumber playerctl
 systemctl --user enable pipewire-pulse wireplumber
 systemctl --user start pipewire-pulse wireplumber
 
@@ -72,6 +72,5 @@ sudo systemctl start bluetooth
 yay -S bluetuith
 
 # workspace setup
-# ly theme
 # media keys
 # fingerprint reader?

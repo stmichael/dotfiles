@@ -18,6 +18,9 @@ window#waybar.hidden {
 .modules-right > widget > .module {
     padding: 0 4px;
 }
+.modules-center > widget > .module {
+    padding: 0 4px;
+}
 
 #workspaces button {
     color: white;

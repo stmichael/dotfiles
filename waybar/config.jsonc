@@ -8,20 +8,20 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "hyprland/language",
         "hyprland/submap"
     ],
-    "modules-center": [],
     "modules-right": [
-        // "mpd",
-        "hyprland/language",
+        "mpris",
+        "pulseaudio",
         "bluetooth",
         "network",
         "cpu",
         "memory",
-        // "temperature",
         "backlight",
-        "pulseaudio",
         "battery",
         "power-profiles-daemon",
         "clock",
@@ -29,6 +29,18 @@
     ],
     "hyprland/workspaces": {
         "format": "{name}"
+    },
+    "hyprland/submap": {
+        "format": "\uf11c {}"
+    },
+    "mpris": {
+        "format": "{status_icon}",
+        "tooltip-format": "{player} {dynamic}",
+        "status-icons": {
+            "playing": "\uf04b",
+            "paused": "\uf04c",
+            "stopped": "\uf04d"
+        }
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) \u2e28{songPosition}|{queueLength}\u2e29 {volume}% \uf001",
