@@ -11,11 +11,12 @@ prompt_working_dir() {
 }
 
 prompt_git() {
-  local branch=$(git symbolic-ref --short HEAD 2> /dev/null)
+  git rev-parse --is-inside-work-tree > /dev/null 2>&1
   local is_repo=$?
 
   if [[ $is_repo -eq 0 ]]
   then
+    local branch=$(git symbolic-ref --short HEAD 2> /dev/null)
     local mode
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
       mode=" <B>"
