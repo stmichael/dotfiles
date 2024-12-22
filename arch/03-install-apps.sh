@@ -12,8 +12,8 @@ chsh -s /bin/zsh
 # lazygit
 sudo pacman -S lazygit
 
-# finish zsh
 # yazi
+sudo pacman -S yazi p7zip jq poppler fd ripgrep fzf zoxide imagemagick
 
 # Citrix
 # slack
