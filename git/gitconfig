@@ -1,8 +1,6 @@
 [user]
   name = Michael Stämpfli
   email = michael.staempfli@gmail.com
-[alias]
-  co = checkout
 [color]
   diff = auto
   status = auto
