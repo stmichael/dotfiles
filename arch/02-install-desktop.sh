@@ -29,6 +29,7 @@ cd dotfiles
 sudo pacman -S ly
 sudo systemctl enable ly
 sudo systemctl start ly
+# -> change `animation=matrix` in /etc/ly/config.ini
 
 # desktop environment
 sudo pacman -S hyprland hyprlock waybar
