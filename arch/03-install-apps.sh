@@ -24,3 +24,4 @@ sudo pacman -S lazygit
 # vlc
 # keep vscode delete dialog focus
 # samba folder
+# email

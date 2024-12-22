@@ -73,8 +73,4 @@ yay -S bluetuith
 # workspace setup
 # ly theme
 # media keys
-
-# Ideas
-# -----
-# Remap alt arrow cross with kmonad. Then all applications would work and don't need to be configured separately.
-# Better title submaps
+# fingerprint reader?
