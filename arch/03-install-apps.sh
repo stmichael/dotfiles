@@ -21,11 +21,13 @@ sudo pacman -S openvpn unzip
 # mail client
 sudo pacman -S thunderbird
 
+# vlc
+sudo pacman -S vlc
+
 # Citrix
 # slack
 # intellij
 # vpn clients (dv bern)
-# vlc
 # keep vscode delete dialog focus
 # samba folder
 # kubectl and config management
