@@ -24,10 +24,14 @@ sudo pacman -S thunderbird
 # vlc
 sudo pacman -S vlc
 
+# bitwarden
+sudo pacman -S bitwarden-cli
+
+# NAS
+sudo pacman -S nfs-utils
+
 # Citrix
 # slack
 # intellij
 # vpn clients (dv bern)
-# keep vscode delete dialog focus
-# samba folder
 # kubectl and config management

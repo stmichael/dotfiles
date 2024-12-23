@@ -25,17 +25,17 @@ alias dcx='docker compose exec'
 alias k='kubectl'
 
 # USB
-usbmount() {
-  sudo mkdir -p /mnt/usbstick
-  sudo mount -o gid=users,fmask=113,dmask=002 /dev/sda /mnt/usbstick
+usb-mount() {
+  sudo mount --mkdir -o gid=users,fmask=113,dmask=002 /dev/sda /mnt/usbstick
+  echo "USB device available at /mnt/usbstick"
 }
 
-usbumount() {
+usb-umount() {
   sudo umount /mnt/usbstick
 }
 
 # NordVPN
-nordconnect() {
+nord-connect() {
   local country=$1
 
   ps -a | grep openvpn > /dev/null
@@ -53,14 +53,24 @@ nordconnect() {
   fi
 }
 
-norddisconnect() {
+nord-disconnect() {
   ps -a | grep openvpn | awk '{ print $1 }' | xargs -I {} sudo kill {}
 }
 
-nordupdate() {
+nord-update() {
   mkdir -p ~/.config/nordvpn/profiles
   rm -f ~/.config/nordvpn/profiles/ovpn.zip 2> /dev/null
   curl -o ~/.config/nordvpn/profiles/ovpn.zip https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
   unzip ~/.config/nordvpn/profiles/ovpn.zip -d ~/.config/nordvpn/profiles
   rm -f ~/.config/nordvpn/profiles/ovpn.zip
+}
+
+# NAS
+nas-mount() {
+  sudo mount --mkdir -t nfs -o vers=4 192.168.0.20:/volume1/homes/stmichael /mnt/nas
+  echo "NAS available at /mnt/nas"
+}
+
+nas-umount() {
+  sudo umount /mnt/nas
 }
