@@ -18,13 +18,14 @@ sudo pacman -S yazi p7zip jq poppler fd ripgrep fzf zoxide imagemagick
 # nordvpn
 sudo pacman -S openvpn unzip
 
+# mail client
+sudo pacman -S thunderbird
+
 # Citrix
 # slack
-# mail client
 # intellij
 # vpn clients (dv bern)
 # vlc
 # keep vscode delete dialog focus
 # samba folder
-# email
 # kubectl and config management
