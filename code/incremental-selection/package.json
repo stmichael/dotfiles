@@ -14,8 +14,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "incremental-selection.toggle",
-        "title": "Incremental selection: Toggle"
+        "command": "incremental-selection.start",
+        "title": "Incremental selection: Start"
+      },
+      {
+        "command": "incremental-selection.clear",
+        "title": "Incremental selection: Clear"
       }
     ]
   },

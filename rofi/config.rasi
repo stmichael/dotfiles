@@ -84,15 +84,7 @@ configuration {
   }
 
   /* keybindings */
-  kb-move-char-back: "Left,Alt+h";
-  kb-move-char-forward: "Right,Alt+n";
-  kb-remove-char-forward: "Delete,Alt+u";
-  kb-remove-char-back: "BackSpace";
-  kb-accept-entry: "Return,KP_Enter";
   kb-mode-next: "Alt+r";
   kb-mode-previous: "Alt+g";
-  kb-row-up: "Up,Alt+c";
-  kb-row-down: "Down,Alt+t";
-  kb-cancel: "Escape";
 }
 @theme "theme"

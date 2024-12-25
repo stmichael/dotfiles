@@ -7,4 +7,4 @@ cd $BASEDIR
 
 source ../utils.sh
 
-link_file ./yazi.toml ~/.config/yazi/yazi.toml
+sudo_link_file ./default.conf /etc/keyd/default.conf

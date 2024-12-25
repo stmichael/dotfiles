@@ -1,7 +1,0 @@
-[manager]
-prepend_keymap = [
-	{ on = "<A-c>", run = 'arrow -1', desc = "Up" },
-	{ on = "<A-t>", run = 'arrow 1', desc = "Down" },
-	{ on = "<A-h>", run = 'leave', desc = "Down" },
-	{ on = "<A-n>", run = 'enter', desc = "Down" },
-]

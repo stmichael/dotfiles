@@ -44,6 +44,11 @@ sudo pacman -S hyprland hyprlock waybar
 # fonts
 sudo pacman -S noto-fonts ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono
 
+# keybindings
+sudo pacman -S keyd
+sudo systemctl enable keyd
+sudo systemctl start keyd
+
 # power profiles
 sudo pacman -S power-profiles-daemon python
 sudo systemctl enable power-profiles-daemon

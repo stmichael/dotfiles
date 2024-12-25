@@ -1,17 +1,7 @@
-// Place your key bindings in this file to override the defaults
-// The following extensions are needed: emacs-region, ParagraphJump
 [
     // Cursor movement
     {
-        "key": "alt+h",
-        "command": "cursorMove",
-        "args": {
-            "to": "left"
-        },
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+h",
+        "key": "left",
         "command": "cursorMove",
         "args": {
             "to": "left",
@@ -20,15 +10,7 @@
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+n",
-        "command": "cursorMove",
-        "args": {
-            "to": "right"
-        },
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+n",
+        "key": "right",
         "command": "cursorMove",
         "args": {
             "to": "right",
@@ -37,15 +19,7 @@
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+t",
-        "command": "cursorMove",
-        "args": {
-            "to": "down"
-        },
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+t",
+        "key": "down",
         "command": "cursorMove",
         "args": {
             "to": "down",
@@ -54,15 +28,7 @@
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+c",
-        "command": "cursorMove",
-        "args": {
-            "to": "up"
-        },
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+c",
+        "key": "up",
         "command": "cursorMove",
         "args": {
             "to": "up",
@@ -70,16 +36,9 @@
         },
         "when": "editorTextFocus && incremental-selection.active"
     },
+
     {
-        "key": "alt+shift+h",
-        "command": "cursorMove",
-        "args": {
-            "to": "wrappedLineStart"
-        },
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+shift+h",
+        "key": "home",
         "command": "cursorMove",
         "args": {
             "to": "wrappedLineStart",
@@ -88,15 +47,7 @@
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+shift+n",
-        "command": "cursorMove",
-        "args": {
-            "to": "wrappedLineEnd"
-        },
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+shift+n",
+        "key": "end",
         "command": "cursorMove",
         "args": {
             "to": "wrappedLineEnd",
@@ -105,42 +56,23 @@
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+shift+c",
-        "command": "cursorPageUp",
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+shift+c",
+        "key": "pageup",
         "command": "cursorPageUpSelect",
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+shift+t",
-        "command": "cursorPageDown",
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+shift+t",
+        "key": "pagedown",
         "command": "cursorPageDownSelect",
         "when": "editorTextFocus && incremental-selection.active"
     },
+
     {
-        "key": "alt+d",
-        "command": "cursorTop",
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+d",
+        "key": "ctrl+home",
         "command": "cursorTopSelect",
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+shift+d",
-        "command": "cursorBottom",
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+shift+d",
+        "key": "ctrl+end",
         "command": "cursorBottomSelect",
         "when": "editorTextFocus && incremental-selection.active"
     },
@@ -169,8 +101,7 @@
         "key": "alt+shift+g",
         "command": "cursorMove",
         "args": {
-            "to": "prevBlankLine",
-            "select": false
+            "to": "prevBlankLine"
         },
         "when": "editorTextFocus && !incremental-selection.active"
     },
@@ -187,8 +118,7 @@
         "key": "alt+shift+r",
         "command": "cursorMove",
         "args": {
-            "to": "nextBlankLine",
-            "select": false
+            "to": "nextBlankLine"
         },
         "when": "editorTextFocus && !incremental-selection.active"
     },
@@ -215,13 +145,14 @@
 
     // Text modification
     {
-        "key": "alt+u",
-        "command": "deleteRight"
+        "key": "alt+space",
+        "command": "incremental-selection.start",
+        "when": "editorTextFocus && !incremental-selection.active"
     },
     {
         "key": "alt+space",
-        "command": "incremental-selection.toggle",
-        "when": "editorTextFocus"
+        "command": "incremental-selection.clear",
+        "when": "editorTextFocus && incremental-selection.active"
     },
 
     // Tab handling
