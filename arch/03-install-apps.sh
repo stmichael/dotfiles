@@ -30,8 +30,11 @@ sudo pacman -S bitwarden-cli
 # NAS
 sudo pacman -S nfs-utils
 
+# Java
+yay -S jbang
+
 # Citrix
 # slack
-# intellij
 # vpn clients (dv bern)
 # kubectl and config management
+# tmux

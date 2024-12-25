@@ -84,3 +84,4 @@ sudo systemctl start bluetooth
 yay -S bluetuith
 
 # workspace setup
+# unified theme
