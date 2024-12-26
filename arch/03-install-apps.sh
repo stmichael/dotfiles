@@ -33,8 +33,12 @@ sudo pacman -S nfs-utils
 # Java
 yay -S jbang
 
-# Citrix
 # slack
+yay -S slack-desktop-wayland
+
+# tmux
+sudo pacman -S tmux
+
+# Citrix
 # vpn clients (dv bern)
 # kubectl and config management
-# tmux
