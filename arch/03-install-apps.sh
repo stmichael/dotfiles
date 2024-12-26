@@ -33,7 +33,6 @@ sudo pacman -S nfs-utils
 # Java
 yay -S jbang
 
-# keyd macro for composite keys
 # Citrix
 # slack
 # vpn clients (dv bern)
