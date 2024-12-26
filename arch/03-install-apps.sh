@@ -39,6 +39,8 @@ yay -S slack-desktop-wayland
 # tmux
 sudo pacman -S tmux
 
+# kubectl
+sudo pacman -S kubectl
+
 # Citrix
 # vpn clients (dv bern)
-# kubectl and config management
