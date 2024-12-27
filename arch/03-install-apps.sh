@@ -42,5 +42,8 @@ sudo pacman -S tmux
 # kubectl
 sudo pacman -S kubectl
 
+# LibreOffice
+sudo pacman -S libreoffice-still
+
 # Citrix
 # vpn clients (dv bern)
