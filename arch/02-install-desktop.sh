@@ -95,4 +95,3 @@ hp-setup -i
 
 # unified theme
 # screen sharing
-# map apps to workspaces
