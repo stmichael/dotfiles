@@ -155,6 +155,7 @@
         "format": "{} \uf02f",
         "return-type": "json",
         "exec": "$HOME/.config/waybar/modules/cups.sh",
+        "interval": 30,
         "tooltip": true
     }
 }
