@@ -83,5 +83,17 @@ sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 yay -S bluetuith
 
+# printing
+sudo pacman -S avahi nss-mdns cups hplip
+sudo systemctl enable avahi-daemon
+sudo systemctl start avahi-daemon
+# avahi-browse --all --ignore-local --resolve --terminate to show a list of discovered services
+sudo systemctl enable cups
+sudo systemctl start cups
+hp-setup -i
+
 # workspace setup
 # unified theme
+# screen sharing
+# multi monitor setup
+# map apps to workspaces

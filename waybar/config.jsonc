@@ -19,6 +19,7 @@
         "pulseaudio",
         "bluetooth",
         "network",
+        "custom/cups",
         "cpu",
         "memory",
         "backlight",
@@ -149,5 +150,11 @@
 			"shutdown": "systemctl poweroff",
 			"reboot": "systemctl reboot"
 		}
+    },
+    "custom/cups": {
+        "format": "{} \uf02f",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/modules/cups.sh",
+        "tooltip": true
     }
 }
