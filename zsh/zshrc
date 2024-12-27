@@ -13,5 +13,12 @@ source "$ZSH_CONFIG_HOME/key-bindings.zsh"
 # Prompt
 source "$ZSH_CONFIG_HOME/prompt.zsh"
 
-# Aliases
-source "$ZSH_CONFIG_HOME/aliases.zsh"
+# Modules
+source "$ZSH_CONFIG_HOME/modules/ls.zsh"
+source "$ZSH_CONFIG_HOME/modules/git.zsh"
+source "$ZSH_CONFIG_HOME/modules/k8s.zsh"
+source "$ZSH_CONFIG_HOME/modules/docker.zsh"
+source "$ZSH_CONFIG_HOME/modules/nas.zsh"
+source "$ZSH_CONFIG_HOME/modules/usb.zsh"
+source "$ZSH_CONFIG_HOME/modules/nordvpn.zsh"
+source "$ZSH_CONFIG_HOME/modules/monitors.zsh"

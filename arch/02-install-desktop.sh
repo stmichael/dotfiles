@@ -66,6 +66,7 @@ sudo pacman -S rofi jq
 sudo pacman -S alacritty
 
 # display layout
+sudo sed -i 's/Exec=.*/Exec=nwg-displays -m \/home\/stmichael\/.config\/hypr\/monitors\/custom.conf/g' /usr/share/applications/nwg-displays.desktop
 sudo pacman -S nwg-displays
 
 # notification
@@ -92,8 +93,6 @@ sudo systemctl enable cups
 sudo systemctl start cups
 hp-setup -i
 
-# workspace setup
 # unified theme
 # screen sharing
-# multi monitor setup
 # map apps to workspaces

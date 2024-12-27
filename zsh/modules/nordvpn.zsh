@@ -1,40 +1,3 @@
-# ls
-alias ls='ls --color=auto'
-alias ll='ls -lah'
-alias la='ls -a'
-
-# git
-alias ga='git add'
-alias gm='git merge --no-ff'
-alias gs='git status -b'
-alias gl='git pull'
-alias gf='git fetch'
-alias gp='git push'
-alias gd='git diff'
-alias gc='git commit -v'
-alias gb='git branch'
-alias gg='git log --graph'
-alias gco='git checkout'
-
-# docker
-alias dcup='docker compose up'
-alias dcdown='docker compose down'
-alias dcx='docker compose exec'
-
-# kubernetes
-alias k='kubectl'
-
-# USB
-usb-mount() {
-  sudo mount --mkdir -o gid=users,fmask=113,dmask=002 /dev/sda /mnt/usbstick
-  echo "USB device available at /mnt/usbstick"
-}
-
-usb-umount() {
-  sudo umount /mnt/usbstick
-}
-
-# NordVPN
 nord-connect() {
   local country=$1
 
@@ -55,6 +18,7 @@ nord-connect() {
 
 nord-disconnect() {
   ps -a | grep openvpn | awk '{ print $1 }' | xargs -I {} sudo kill {}
+  sleep 2
 }
 
 nord-update() {
@@ -63,14 +27,4 @@ nord-update() {
   curl -o ~/.config/nordvpn/profiles/ovpn.zip https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
   unzip ~/.config/nordvpn/profiles/ovpn.zip -d ~/.config/nordvpn/profiles
   rm -f ~/.config/nordvpn/profiles/ovpn.zip
-}
-
-# NAS
-nas-mount() {
-  sudo mount --mkdir -t nfs -o vers=4 192.168.0.20:/volume1/homes/stmichael /mnt/nas
-  echo "NAS available at /mnt/nas"
-}
-
-nas-umount() {
-  sudo umount /mnt/nas
 }
