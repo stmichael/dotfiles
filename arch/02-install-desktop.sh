@@ -78,6 +78,9 @@ sudo pacman -S brightnessctl
 # hypridle
 sudo pacman -S hypridle
 
+# hyprpaper
+sudo pacman -S hyprpaper
+
 # bluetooth
 sudo pacman -S bluez bluez-utils
 sudo systemctl enable bluetooth
