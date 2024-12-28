@@ -93,5 +93,13 @@ sudo systemctl enable cups
 sudo systemctl start cups
 hp-setup -i
 
-# unified theme
 # screen sharing
+sudo pacman -S xdg-desktop-portal-hyprland grim slurp
+# Add the following config to hyprland
+# exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+# exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+# env = XDG_SESSION_TYPE,wayland
+# env = XDG_SESSION_DESKTOP,Hyprland
+# env = XDG_CURRENT_DESKTOP,Hyprland
+
+# unified theme
