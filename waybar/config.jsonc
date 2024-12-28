@@ -29,7 +29,9 @@
         "custom/power"
     ],
     "hyprland/workspaces": {
-        "format": "{name}"
+        "format": "{name}",
+        "active-only": true,
+        "all-outputs": false
     },
     "hyprland/submap": {
         "format": "\uf11c {}"
