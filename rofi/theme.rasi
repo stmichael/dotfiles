@@ -1,41 +1,33 @@
-/*******************************************************************************
- * ROFI Color theme
- * Based on Adapta-Nokto GTK theme (https://github.com/adapta-project/adapta-gtk-theme)
- * User: PyGeek03
- * Copyright: PyGeek03
- ********************************************************************************/
-
 * {
-    selected-normal-foreground:  rgba ( 250, 251, 252, 100 % );
-    foreground:                  rgba ( 250, 251, 252, 100 % );
-    normal-foreground:           @foreground;
-    alternate-normal-background: rgba ( 69, 90, 100, 100 % );
-    red:                         rgba ( 220, 50, 47, 100 % );
-    selected-urgent-foreground:  rgba ( 253, 246, 227, 100 % );
-    blue:                        rgba ( 38, 139, 210, 100 % );
-    urgent-foreground:           rgba ( 255, 82, 82, 100 % );
-    alternate-urgent-background: rgba ( 69, 90, 100, 100 % );
-    active-foreground:           rgba ( 0, 188, 212, 100 % );
-    lightbg:                     rgba ( 238, 232, 213, 100 % );
-    selected-active-foreground:  rgba ( 253, 246, 227, 100 % );
-    alternate-active-background: rgba ( 69, 90, 100, 100 % );
-    background:                  rgba ( 58, 76, 84, 100 % );
-    bordercolor:                 rgba ( 42, 55, 62, 100 % );
-    alternate-normal-foreground: @foreground;
-    normal-background:           rgba ( 69, 90, 100, 100 % );
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 0, 188, 212, 100 % );
+    background-color:            #000000;
+    separatorcolor:              @foreground;
     border-color:                @foreground;
-    spacing:                     2;
-    separatorcolor:              rgba ( 195, 198, 200, 100 % );
-    urgent-background:           rgba ( 69, 90, 100, 100 % );
-    selected-urgent-background:  rgba ( 255, 82, 82, 100 % );
-    alternate-urgent-foreground: @urgent-foreground;
-    background-color:            rgba ( 0, 0, 0, 0 % );
-    alternate-active-foreground: @active-foreground;
-    active-background:           rgba ( 69, 90, 100, 100 % );
-    selected-active-background:  rgba ( 0, 150, 136, 100 % );
+
+    background:                  #111613;
+    normal-background:           @background;
+    urgent-background:           @background;
+    active-background:           @background;
+    alternate-normal-background: @background;
+    alternate-urgent-background: @background;
+    alternate-active-background: @background;
+
+    foreground:                  #ffffff;
+    normal-foreground:           @foreground;
+    urgent-foreground:           @foreground;
+    active-foreground:           @foreground;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-foreground: @foreground;
+    alternate-active-foreground: @foreground;
+
+    selected-normal-background:  #90ceaa;
+    selected-urgent-background:  @selected-normal-background;
+    selected-active-background:  @selected-normal-background;
+
+    selected-normal-foreground:  #000000;
+    selected-urgent-foreground:  @selected-normal-foreground;
+    selected-active-foreground:  @selected-normal-foreground;
 }
+
 window {
     background-color: @background;
     border:           1;
@@ -70,7 +62,7 @@ element-text {
     text-color:       inherit;
 }
 
-element normal.normal {
+element.normal.normal {
     background-color: @normal-background;
     text-color:       @normal-foreground;
 }

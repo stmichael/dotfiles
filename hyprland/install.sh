@@ -7,7 +7,7 @@ cd $BASEDIR
 
 source ../utils.sh
 
-link_file ./look-and-feel.conf ~/.config/hypr/look-and-feel.conf
+link_file ./theme.conf ~/.config/hypr/theme.conf
 link_file ./layout.conf ~/.config/hypr/layout.conf
 link_file ./input.conf ~/.config/hypr/input.conf
 link_file ./keybindings.conf ~/.config/hypr/keybindings.conf

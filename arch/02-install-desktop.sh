@@ -101,5 +101,3 @@ sudo pacman -S xdg-desktop-portal-hyprland grim slurp
 # env = XDG_SESSION_TYPE,wayland
 # env = XDG_SESSION_DESKTOP,Hyprland
 # env = XDG_CURRENT_DESKTOP,Hyprland
-
-# unified theme

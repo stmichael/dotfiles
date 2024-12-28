@@ -25,7 +25,7 @@ icon-location=left
 actions=1
 
 font= monospace 10
-background-color=#2e3440
+background-color=#111613
 text-color=#FFFFFF
 progress-color=over #0b1c1c
 border-color=#88c0d0
@@ -43,4 +43,5 @@ border-color=#d08770
 
 [urgency=high]
 border-color=#bf616a
+border-size=3
 default-timeout=0

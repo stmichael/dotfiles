@@ -3,5 +3,8 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "explorer.confirmDragAndDrop": false,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "workbench.colorTheme": "Vitesse Dark",
+    "workbench.preferredDarkColorTheme": "Vitesse Dark",
+    "workbench.preferredLightColorTheme": "Vitesse Light"
 }
