@@ -46,4 +46,25 @@ sudo pacman -S kubectl
 sudo pacman -S libreoffice-still
 
 # Citrix
+yay -S icaclient
+sudo pacman -S perl-file-mimeinfo
+mkdir -p $HOME/.ICAClient/cache
+cp /opt/Citrix/ICAClient/config/{All_Regions,Trusted_Region,Unknown_Region,canonicalization,regions}.ini $HOME/.ICAClient/
+echo "[Desktop Entry]
+Name=Citrix ICA client
+Comment="Launch Citrix applications from .ica files"
+Categories=Network;
+Exec=/opt/Citrix/ICAClient/wfica
+Terminal=false
+Type=Application
+NoDisplay=true
+MimeType=application/x-ica;" | sudo tee /usr/share/applications/wfica.desktop
+echo '#!/bin/sh
+if [ "$1" == "--version" ]; then
+    pactl info | grep Server\ Name | sed -e "s/Server Name: //"
+else
+    echo "This is a dummy file for apps that check if pulseaudio is available by checking for the binary existing"
+fi' | sudo tee /usr/bin/pulseaudio
+sudo chmod a+x /usr/bin/pulseaudio
+
 # vpn clients (dv bern)
