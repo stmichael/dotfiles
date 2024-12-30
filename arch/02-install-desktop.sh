@@ -96,7 +96,7 @@ sudo systemctl enable cups
 sudo systemctl start cups
 hp-setup -i
 
-# screen sharing
+# screen sharing (test on https://mozilla.github.io/webrtc-landing/gum_test.html)
 sudo pacman -S xdg-desktop-portal-hyprland grim slurp
 # Add the following config to hyprland
 # exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -104,3 +104,6 @@ sudo pacman -S xdg-desktop-portal-hyprland grim slurp
 # env = XDG_SESSION_TYPE,wayland
 # env = XDG_SESSION_DESKTOP,Hyprland
 # env = XDG_CURRENT_DESKTOP,Hyprland
+
+
+# backup
