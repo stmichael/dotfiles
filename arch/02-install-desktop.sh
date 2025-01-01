@@ -118,3 +118,8 @@ borg init --encryption=repokey /mnt/usb/backup/home-stmichael
 sudo umount /mnt/usb
 
 # finger print
+sudo pacman -S fprintd
+sudo fprintd-enroll stmichael
+sudo sed -i '3i auth       sufficient   pam_unix.so try_first_pass likeauth nullok' /etc/pam.d/ly
+sudo sed -i '3i auth       sufficient   pam_fprintd.so' /etc/pam.d/ly
+sudo sed -i '2i auth            sufficient      pam_fprintd.so' /etc/pam.d/sudo
