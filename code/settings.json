@@ -4,7 +4,7 @@
     "files.insertFinalNewline": true,
     "explorer.confirmDragAndDrop": false,
     "editor.tabSize": 2,
-    "workbench.colorTheme": "Vitesse Dark",
-    "workbench.preferredDarkColorTheme": "Vitesse Dark",
+    "workbench.colorTheme": "Houston",
+    "workbench.preferredDarkColorTheme": "Houston",
     "workbench.preferredLightColorTheme": "Vitesse Light"
 }

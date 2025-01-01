@@ -1,8 +1,13 @@
-usb-mount() {
-  sudo mount --mkdir -o gid=users,fmask=113,dmask=002 /dev/sda /mnt/usbstick
-  echo "USB device available at /mnt/usbstick"
+usb-mount-stick() {
+  sudo mount --mkdir -o uid=$USER,gid=$USER /dev/sda1 /mnt/usb
+  echo "USB device available at /mnt/usb"
+}
+
+usb-mount-disc() {
+  sudo mount --mkdir -t ext4 /dev/sda1 /mnt/usb
+  echo "USB device available at /mnt/usb"
 }
 
 usb-umount() {
-  sudo umount /mnt/usbstick
+  sudo umount /mnt/usb
 }

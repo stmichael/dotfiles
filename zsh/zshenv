@@ -2,3 +2,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$XDG_CONFIG_HOME/.cache
 
 export ZSH_CONFIG_HOME="$XDG_CONFIG_HOME/zsh"
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi

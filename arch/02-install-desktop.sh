@@ -105,5 +105,12 @@ sudo pacman -S xdg-desktop-portal-hyprland grim slurp
 # env = XDG_SESSION_DESKTOP,Hyprland
 # env = XDG_CURRENT_DESKTOP,Hyprland
 
-
 # backup
+sudo pacman -S borg
+sudo mount --mkdir -t ext4 /dev/sda1 /mnt/usb
+mkdir -p /mnt/usb/backup/home-stmichael
+borg init --encryption=repokey /mnt/usb/backup/home-stmichael
+sudo umount /mnt/usb
+
+# finger print
+# detect huenas.local
