@@ -87,10 +87,15 @@ sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 yay -S bluetuith
 
-# printing
-sudo pacman -S avahi nss-mdns cups hplip
+# .local network detection
+sudo pacman -S avahi nss-mdns
 sudo systemctl enable avahi-daemon
 sudo systemctl start avahi-daemon
+# avahi-browse --all --ignore-local --resolve --terminate to show a list of discovered services
+sudo sed -i 's/hosts:.*/hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns/g' /etc/nsswitch.conf
+
+# printing
+sudo pacman -S cups hplip
 # avahi-browse --all --ignore-local --resolve --terminate to show a list of discovered services
 sudo systemctl enable cups
 sudo systemctl start cups
@@ -113,4 +118,3 @@ borg init --encryption=repokey /mnt/usb/backup/home-stmichael
 sudo umount /mnt/usb
 
 # finger print
-# detect huenas.local
