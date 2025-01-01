@@ -67,4 +67,10 @@ else
 fi' | sudo tee /usr/bin/pulseaudio
 sudo chmod a+x /usr/bin/pulseaudio
 
+# docker
+sudo pacman -S docker
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo useradd -m -G docker stmichael
+
 # vpn clients (dv bern)
