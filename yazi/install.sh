@@ -8,3 +8,5 @@ cd $BASEDIR
 source ../utils.sh
 
 link_file ./yazi.toml ~/.config/yazi/yazi.toml
+link_file ./keymap.toml ~/.config/yazi/keymap.toml
+link_file ./init.lua ~/.config/yazi/init.lua

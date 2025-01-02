@@ -13,7 +13,9 @@ chsh -s /bin/zsh
 sudo pacman -S lazygit
 
 # yazi
-sudo pacman -S yazi p7zip jq poppler fd ripgrep fzf zoxide imagemagick
+sudo pacman -S yazi p7zip jq poppler fd ripgrep fzf zoxide imagemagick ueberzugpp
+yay -S fuse-archive
+ya pack -a dawsers/fuse-archive
 
 # nordvpn
 sudo pacman -S openvpn unzip
