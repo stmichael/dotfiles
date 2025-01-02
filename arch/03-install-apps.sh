@@ -71,6 +71,6 @@ sudo chmod a+x /usr/bin/pulseaudio
 sudo pacman -S docker
 sudo systemctl enable docker
 sudo systemctl start docker
-sudo useradd -m -G docker stmichael
+sudo usermod -aG docker stmichael
 
 # vpn clients (dv bern)
