@@ -17,20 +17,8 @@ prompt_git() {
   if [[ $is_repo -eq 0 ]]
   then
     local branch=$(git symbolic-ref --short HEAD 2> /dev/null)
-    local mode
-    if [[ -e "${repo_path}/BISECT_LOG" ]]; then
-      mode=" <B>"
-    elif [[ -e "${repo_path}/MERGE_HEAD" ]]; then
-      mode=" >M<"
-    elif [[ -e "${repo_path}/rebase" || -e "${repo_path}/rebase-apply" || -e "${repo_path}/rebase-merge" || -e "${repo_path}/../.dotest" ]]; then
-      mode=" >R>"
-    fi
     local git_status=$(git status --porcelain)
-    local modified=$(echo $git_status | grep -c '^ M')
-    local deleted=$(echo $git_status | grep -c '^ D')
-    local untracked=$(echo $git_status | grep -c '^??')
-
-    print "\ue725 $branch \uea7f $untracked \uea73 $modified \uea81 $deleted\n#46AFA5"
+    print "\ue725 $branch $([[ -z $git_status ]] && printf "\uf00c" || printf "\uea73")\n#46AFA5"
   fi
 }
 
