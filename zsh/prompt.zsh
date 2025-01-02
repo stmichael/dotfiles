@@ -18,7 +18,16 @@ prompt_git() {
   then
     local branch=$(git symbolic-ref --short HEAD 2> /dev/null)
     local git_status=$(git status --porcelain)
-    print "\ue725 $branch $([[ -z $git_status ]] && printf "\uf00c" || printf "\uea73")\n#46AFA5"
+    print "\ue725 $branch $([[ -z $git_status ]] && print "\uf00c" || print "\uea73")\n#46AFA5"
+  fi
+}
+
+prompt_k8s() {
+  local context
+  context=$(kubectl config current-context 2> /dev/null)
+  if [[ $? -eq 0 ]]
+  then
+    print "\ue81d $context\n#B775C0"
   fi
 }
 
@@ -82,6 +91,7 @@ build_left_prompt() {
 
 build_right_prompt() {
   prompt_git
+  prompt_k8s
 }
 
 # Usage: prompt-length TEXT [COLUMNS]
