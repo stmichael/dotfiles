@@ -23,9 +23,10 @@ borg create                         \
     --show-rc                       \
     --compression lz4               \
     --exclude-caches                \
-    --exclude '/home/*/.cache/*'     \
-    --exclude '/home/**/*cache*' \
+    --exclude '/home/*/.cache/*'    \
+    --exclude '/home/**/*cache*'    \
     --exclude '/home/**/node_modules/*' \
+    --exclude '/home/*/Downloads/*' \
                                     \
     ::'{hostname}-{now}'            \
     /home/stmichael
