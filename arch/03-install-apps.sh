@@ -78,4 +78,7 @@ sudo systemctl enable docker
 sudo systemctl start docker
 sudo usermod -aG docker stmichael
 
+# bittorrent
+sudo pacman -S qbittorrent
+
 # vpn clients (dv bern)
