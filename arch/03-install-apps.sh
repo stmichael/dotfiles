@@ -2,6 +2,9 @@
 
 # -> Login as stmichael
 
+# archey
+yay -S archey4
+
 # vscode
 sudo pacman -S code
 
