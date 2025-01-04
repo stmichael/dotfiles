@@ -1,5 +1,9 @@
-# Generic
-bindkey "\e[3~" delete-char
+# Cursor movement
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# Text modification
+bindkey "^[[3~" delete-char
 
 # Menu selection
 bindkey -M menuselect '^[h' vi-backward-char
