@@ -45,7 +45,7 @@ mount --mkdir /dev/vg0/home /mnt/home
 
 
 # Bootstrap arch linux
-pacstrap -K /mnt base linux linux-firmware intel-ucode vim man sudo
+pacstrap -K /mnt base linux linux-firmware linux-firmware-qlogic intel-ucode vim man sudo
 genfstab -U /mnt >> /mnt/etc/fstab
 
 
