@@ -114,6 +114,11 @@ borg init --encryption=repokey /mnt/usb/backup/home-stmichael
 sudo umount /mnt/usb
 
 # finger print
-sudo pacman -S fprintd
-sudo fprintd-enroll stmichael
-sudo sed -i '2i auth            sufficient      pam_fprintd.so' /etc/pam.d/sudo
+# -> possibly causes freezes after suspension
+# sudo pacman -S fprintd
+# sudo fprintd-enroll stmichael
+# sudo sed -i '2i auth            sufficient      pam_fprintd.so' /etc/pam.d/sudo
+
+# check out https://crates.io/crates/hyprsome/0.1.10 for workspace to monitor distribution
+# https://github.com/hyprland-community/awesome-hyprland
+# https://hyprland-community.github.io/pyprland/
