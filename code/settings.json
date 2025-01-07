@@ -6,5 +6,7 @@
     "editor.tabSize": 2,
     "workbench.colorTheme": "Houston",
     "workbench.preferredDarkColorTheme": "Houston",
-    "workbench.preferredLightColorTheme": "Vitesse Light"
+    "workbench.preferredLightColorTheme": "Vitesse Light",
+    "redhat.telemetry.enabled": false,
+    "editor.wordWrap": "on"
 }
