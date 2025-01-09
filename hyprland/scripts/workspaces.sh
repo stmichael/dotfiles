@@ -34,7 +34,7 @@ setup_single_monitor_layout() {
 
 setup_two_monitor_layout() {
   local index=0
-  hyprctl monitors -j | jq -r '.[].id' | while read -r monitorId
+  hyprctl monitors -j | jq -r '.[].id' | sort -n | while read -r monitorId
   do
     if [[ $index -eq 0 ]]
     then
@@ -54,8 +54,15 @@ setup_two_monitor_layout() {
 move_workspace_to_monitor() {
   local workspace=$1
   local monitor=$2
-  hyprctl dispatch moveworkspacetomonitor $workspace $monitor > /dev/null
-  hyprctl keyword workspace $workspace, $monitor > /dev/null
+
+  if [[ $DRY_RUN -eq 1 ]]
+  then
+    echo "-> hyprctl dispatch moveworkspacetomonitor $workspace $monitor"
+    echo "-> hyprctl keyword workspace $workspace, $monitor"
+  else
+    hyprctl dispatch moveworkspacetomonitor $workspace $monitor > /dev/null
+    hyprctl keyword workspace $workspace, $monitor > /dev/null
+  fi
 }
 
 listen_to_monitor_change() {
@@ -64,29 +71,36 @@ listen_to_monitor_change() {
 
   socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line
   do
+    echo $line
     handle_event "$line"
   done
 }
 
 usage() {
-    echo "Usage: $0 ACTION"
+    echo "Usage: $0 ACTION [--dry-run]"
     echo "Adjust workspaces to the monitor layout."
     echo ""
     echo "ACTION can be any of:"
-    echo "fix: adjusts the workspaces according to the monitor layout"
+    echo " fix: adjusts the workspaces according to the monitor layout"
     echo "            at the time of invocation."
-    echo "follow-monitors: listens the monitor changes on the hyprland"
+    echo " follow-monitors: listens the monitor changes on the hyprland"
     echo "                        event socket and adjusts the workspaces whenever"
     echo "                        you plug or unplug a monitor."
     echo "Options:"
     echo " -h, --help This help"
+    echo " --dry-run  Doesn't perform any workspace rearrangements, only prints what it would do"
     exit 1
 }
 
+DRY_RUN=0
 while [[ $# -gt 0 ]]; do
   case $1 in
     -h|--help)
       usage
+      shift
+      ;;
+    --dry-run)
+      DRY_RUN=1
       shift
       ;;
     *)
@@ -96,10 +110,13 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ $ACTION -eq "fix" ]]
+if [[ $ACTION = "fix" ]]
 then
   handle_monitor_change
-elif [[ $ACTION -eq "follow-monitors" ]]
+elif [[ $ACTION = "follow-monitors" ]]
 then
   listen_to_monitor_change
+else
+  echo "Unknown action $ACTION"
+  exit 1
 fi
