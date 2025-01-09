@@ -78,8 +78,8 @@ sudo pacman -S brightnessctl
 # hypridle
 sudo pacman -S hypridle
 
-# hyprpaper
-sudo pacman -S hyprpaper
+# wallpaper
+sudo pacman -S wpaperd
 
 # bluetooth
 sudo pacman -S bluez bluez-utils

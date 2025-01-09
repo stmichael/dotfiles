@@ -1,0 +1,6 @@
+[default]
+duration = "10s"
+mode = "center"
+
+[any]
+path = "~/wallpapers"
