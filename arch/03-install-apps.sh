@@ -80,5 +80,3 @@ sudo usermod -aG docker stmichael
 
 # bittorrent
 sudo pacman -S qbittorrent
-
-# vpn clients (dv bern)
