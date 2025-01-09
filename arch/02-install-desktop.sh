@@ -39,7 +39,7 @@ sudo systemctl enable udisks2
 sudo systemctl start udisks2
 
 # desktop environment
-sudo pacman -S hyprland hyprlock waybar
+sudo pacman -S hyprland hyprlock waybar socat
 
 # fonts
 sudo pacman -S noto-fonts ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono

@@ -13,3 +13,4 @@ link_file ./input.conf ~/.config/hypr/input.conf
 link_file ./keybindings.conf ~/.config/hypr/keybindings.conf
 link_file ./rules.conf ~/.config/hypr/rules.conf
 link_file ./hyprland.conf ~/.config/hypr/hyprland.conf
+link_file ./scripts ~/.config/hypr/scripts
