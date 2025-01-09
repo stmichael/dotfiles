@@ -1,5 +1,5 @@
 [default]
-duration = "10s"
+duration = "10m"
 mode = "center"
 
 [any]
