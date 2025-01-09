@@ -66,8 +66,8 @@ sudo pacman -S rofi jq
 sudo pacman -S alacritty
 
 # display layout
-sudo sed -i 's/Exec=.*/Exec=nwg-displays -m \/home\/stmichael\/.config\/hypr\/monitors\/custom.conf/g' /usr/share/applications/nwg-displays.desktop
-sudo pacman -S nwg-displays
+sudo pacman -S python-flit-core
+yay -S wlr-layout-ui
 
 # notification
 sudo pacman -S mako libnotify
