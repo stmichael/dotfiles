@@ -2,7 +2,7 @@ gui:
    theme:
     # Border color of focused window
     activeBorderColor:
-      - '#90ceaa'
+      - '#44a69f'
       - bold
 
     # Border color of non-focused windows
@@ -21,7 +21,7 @@ gui:
     # Background color of selected line.
     # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#highlighting-the-selected-line
     selectedLineBgColor:
-      - "#568d6d"
+      - "#44a69f"
 
     # Background color of selected line when view doesn't have focus.
     inactiveViewSelectedLineBgColor:
