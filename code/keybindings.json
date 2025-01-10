@@ -78,27 +78,17 @@
     },
 
     {
-        "key": "alt+g",
-        "command": "cursorWordLeft",
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+g",
+        "key": "ctrl+left",
         "command": "cursorWordLeftSelect",
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+r",
-        "command": "cursorWordRight",
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+r",
+        "key": "ctrl+right",
         "command": "cursorWordRightSelect",
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+shift+g",
+        "key": "ctrl+shift+left",
         "command": "cursorMove",
         "args": {
             "to": "prevBlankLine"
@@ -106,7 +96,7 @@
         "when": "editorTextFocus && !incremental-selection.active"
     },
     {
-        "key": "alt+shift+g",
+        "key": "ctrl+shift+left",
         "command": "cursorMove",
         "args": {
             "to": "prevBlankLine",
@@ -115,7 +105,7 @@
         "when": "editorTextFocus && incremental-selection.active"
     },
     {
-        "key": "alt+shift+r",
+        "key": "ctrl+shift+right",
         "command": "cursorMove",
         "args": {
             "to": "nextBlankLine"
@@ -123,24 +113,13 @@
         "when": "editorTextFocus && !incremental-selection.active"
     },
     {
-        "key": "alt+shift+r",
+        "key": "ctrl+shift+right",
         "command": "cursorMove",
         "args": {
             "to": "nextBlankLine",
             "select": true
         },
         "when": "editorTextFocus && incremental-selection.active"
-    },
-
-    {
-        "key": "alt+t",
-        "command": "selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "alt+c",
-        "command": "selectPrevSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
 
     // Text modification
@@ -157,19 +136,11 @@
 
     // Tab handling
     {
-        "key": "ctrl+r",
-        "command": "workbench.action.nextEditor"
-    },
-    {
-        "key": "ctrl+g",
-        "command": "workbench.action.previousEditor"
-    },
-    {
-        "key": "ctrl+shift+r",
+        "key": "ctrl+alt+pagedown",
         "command": "workbench.action.moveEditorToRightGroup"
     },
     {
-        "key": "ctrl+shift+g",
+        "key": "ctrl+alt+pageup",
         "command": "workbench.action.moveEditorToLeftGroup"
     }
 ]
