@@ -1,0 +1,17 @@
+{
+  "groups": {
+    "notes": {
+      "name": "Notes",
+      "applications": [
+        "alacritty --working-directory=$HOME/projects/notes",
+        "code ~/projects/notes"
+      ]
+    },
+    "finnova": {
+      "name": "Finnova",
+      "applications": [
+        "alacritty"
+      ]
+    }
+  }
+}

@@ -1,5 +1,5 @@
 configuration {
-  modes: "hyprland-windows,drun,combi";
+  modes: "hyprland-windows,drun,app-groups,combi";
   threads: 0; /* autodetect threading */
   case-sensitive: false;
   terminal: "rofi-sensible-terminal";
@@ -17,6 +17,7 @@ configuration {
   m: "-4"; /* show on monitor with the focused window */
 
   display-hyprland-windows: "Windows";
+  display-app-groups: "App groups";
   display-drun: "Apps";
   display-ssh: "SSH";
   display-combi: "All";
@@ -37,7 +38,7 @@ configuration {
   normalize-match: true;
 
   /* Combi */
-  combi-modes: "hyprland-windows,drun";
+  combi-modes: "hyprland-windows,drun,app-groups";
   combi-hide-mode-prefix: false;
   combi-display-format: "{mode}: {text}";
 
@@ -84,7 +85,9 @@ configuration {
   }
 
   /* keybindings */
-  kb-mode-next: "Alt+r";
-  kb-mode-previous: "Alt+g";
+  kb-mode-next: "Control+Page_Down";
+  kb-mode-previous: "Control+Page_Up";
+  kb-row-left: "";
+  kb-row-right: "";
 }
 @theme "theme"

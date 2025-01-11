@@ -1,0 +1,72 @@
+#!/bin/sh
+
+CONFIG=$HOME/.config/app-groups/config.json
+
+list_groups() {
+  jq ".groups" $CONFIG
+}
+
+open_group() {
+  local name=$1
+  echo "Opening application group $1"
+  jq -r "try(.groups.$name.applications[])" $CONFIG | while read -r application
+  do
+    launch "$application"
+  done
+}
+
+launch() {
+  echo "Launching $1"
+  ( eval $1 > /dev/null 2>&1 & )
+}
+
+usage() {
+  echo "Usage: $0 [OPTIONS] ACTION [NAME]"
+  echo "Allows you to interact with groups of applications."
+  echo ""
+  echo "ACTION can be any of:"
+  echo " list: lists all application groups in a JSON format"
+  echo " open: starts all applications in a group"
+  echo ""
+  echo "NAME: the name of an application group"
+  echo ""
+  echo "Options:"
+  echo " -h, --help This help"
+  exit 1
+}
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      usage
+      shift
+      ;;
+    --dry-run)
+      DRY_RUN=1
+      shift
+      ;;
+    --safe)
+      SAFE=1
+      shift
+      ;;
+    *)
+      ACTION=$1
+      if [[ $ACTION == "open" ]]; then
+        NAME=$2
+        shift
+      fi
+      shift
+      ;;
+  esac
+done
+
+if [[ $ACTION = "list" ]]
+then
+  list_groups
+elif [[ $ACTION = "open" ]]
+then
+  open_group $NAME
+else
+  echo "Unknown action $ACTION"
+  exit 1
+fi
