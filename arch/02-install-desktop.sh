@@ -106,6 +106,9 @@ sudo pacman -S xdg-desktop-portal-hyprland grim slurp
 # Add the following config to hyprland
 # exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
+# screenshot
+yay -S hyprshot
+
 # backup
 sudo pacman -S borg
 sudo mount --mkdir -t ext4 /dev/sda1 /mnt/usb
