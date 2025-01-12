@@ -55,7 +55,7 @@ sudo systemctl enable power-profiles-daemon
 sudo systemctl start power-profiles-daemon
 
 # sound setup
-sudo pacman -S alsa-lib sof-firmware pipewire pipewire-alsa pipewire-pulse wireplumber playerctl
+sudo pacman -S alsa-lib sof-firmware pipewire pipewire-alsa pipewire-pulse wireplumber playerctl pavucontrol
 systemctl --user enable pipewire-pulse wireplumber
 systemctl --user start pipewire-pulse wireplumber
 
