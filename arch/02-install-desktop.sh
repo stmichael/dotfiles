@@ -121,3 +121,6 @@ sudo umount /mnt/usb
 # sudo pacman -S fprintd
 # sudo fprintd-enroll stmichael
 # sudo sed -i '2i auth            sufficient      pam_fprintd.so' /etc/pam.d/sudo
+
+# clipboard
+sudo pacman -S cliphist
