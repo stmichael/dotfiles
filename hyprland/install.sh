@@ -14,4 +14,5 @@ link_file ./keybindings.conf ~/.config/hypr/keybindings.conf
 link_file ./rules.conf ~/.config/hypr/rules.conf
 link_file ./monitors.conf ~/.config/hypr/monitors.conf
 link_file ./hyprland.conf ~/.config/hypr/hyprland.conf
-link_file ./scripts ~/.config/hypr/scripts
+link_file ./scripts/workspaces ~/bin/workspaces
+link_file ./scripts/monitor ~/bin/monitor

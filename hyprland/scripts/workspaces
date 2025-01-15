@@ -24,6 +24,8 @@ handle_monitor_change() {
 }
 
 setup_single_monitor_layout() {
+  wlrlui -m
+
   local monitorId=$(hyprctl monitors -j | jq '.[].id')
   echo "Moving all workspaces to monitor $monitorId"
   move_workspace_to_monitor 1 $monitorId
@@ -33,6 +35,8 @@ setup_single_monitor_layout() {
 }
 
 setup_two_monitor_layout() {
+  wlrlui -m
+
   local index=0
   hyprctl monitors -j | jq -r '.[].id' | sort -n | while read -r monitorId
   do
@@ -45,6 +49,27 @@ setup_two_monitor_layout() {
       echo "Moving other workspaces to monitor $monitorId"
       move_workspace_to_monitor 2 $monitorId
       move_workspace_to_monitor 3 $monitorId
+      move_workspace_to_monitor 4 $monitorId
+    fi
+    index=$((index+1))
+  done
+}
+
+setup_presentation_layout() {
+  wlrlui -m
+
+  local index=0
+  hyprctl monitors -j | jq -r '.[].id' | sort -n | while read -r monitorId
+  do
+    if [[ $index -eq 0 ]]
+    then
+      echo "Moving other workspaces to monitor $monitorId"
+      move_workspace_to_monitor 1 $monitorId
+      move_workspace_to_monitor 2 $monitorId
+      move_workspace_to_monitor 3 $monitorId
+    elif [[ $index -eq 1 ]]
+    then
+      echo "Moving workspace 4 to monitor $monitorId"
       move_workspace_to_monitor 4 $monitorId
     fi
     index=$((index+1))
@@ -86,6 +111,8 @@ usage() {
     echo " follow-monitors: listens the monitor changes on the hyprland"
     echo "                        event socket and adjusts the workspaces whenever"
     echo "                        you plug or unplug a monitor."
+    echo " presentation: use the laptop monitor as primary and the external"
+    echo "               monitor as secondary display."
     echo "Options:"
     echo " -h, --help This help"
     echo " --dry-run  Doesn't perform any workspace rearrangements, only prints what it would do"
@@ -116,6 +143,9 @@ then
 elif [[ $ACTION = "follow-monitors" ]]
 then
   listen_to_monitor_change
+elif [[ $ACTION = "presentation" ]]
+then
+  setup_presentation_layout
 else
   echo "Unknown action $ACTION"
   exit 1
