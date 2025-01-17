@@ -11,13 +11,13 @@ nord-connect() {
 
     local file=$(ls -1 ~/.config/nordvpn/profiles/ovpn_udp/$country* | shuf -n 1)
     echo "Connecting using config $file"
-    sudo openvpn --config $file --auth-user-pass ~/.config/nordvpn/service-credentials &!
+    ( sudo openvpn --config $file --auth-user-pass ~/.config/nordvpn/service-credentials > /dev/null 2>&1 & )
     sleep 2
   fi
 }
 
 nord-disconnect() {
-  ps -a | grep openvpn | awk '{ print $1 }' | xargs -I {} sudo kill {}
+  sudo killall openvpn
   sleep 2
 }
 
