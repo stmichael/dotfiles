@@ -1,0 +1,51 @@
+program_options:
+  tray: false
+  automount: true
+  notify: true
+  password_cache: 30
+  file_manager: alacritty --command yazi
+
+notifications:
+  # Customize which notifications are shown for how long. Possible
+  # values are:
+  #   positive number         timeout in seconds
+  #   false                   disable
+  #   -1                      use the libnotify default timeout
+
+  timeout:          1.5     # set the default for all notifications
+
+  # Specify only if you want to overwrite the default:
+  device_mounted:   5       # mount notification
+  device_unmounted: false   # unmount notification
+  device_added:     false   # device has appeared
+  device_removed:   false   # device has disappeared
+  device_unlocked:  -1      # encrypted device was unlocked
+  device_locked:    -1      # encrypted device was locked
+  job_failed:       -1      # mount/unlock/.. has failed
+
+notification_actions:
+  # Define which actions should be shown on notifications. Note that there
+  # are currently only a limited set of actions available for each
+  # notification. Events that are not explicitly specified show the default
+  # set of actions. Specify an empty list if you don't want to see any
+  # notification for the specified event:
+
+  device_mounted:   [browse]
+  device_added:     [mount]
+
+icon_names:
+  # Customize the icon set used by the tray widget. Each entry
+  # specifies a list of icon names. The first installed icon from
+  # that list will be used.
+
+  media:   [drive-removable-media, media-optical]
+  browse:  [document-open, folder-open]
+  terminal: [terminal, terminator, xfce-terminal]
+  mount:   [udiskie-mount]
+  unmount: [udiskie-unmount]
+  unlock:  [udiskie-unlock]
+  lock:    [udiskie-lock]
+  eject:   [udiskie-eject, media-eject]
+  detach:  [udiskie-detach]
+  delete:  [udiskie-eject]
+  quit:    [application-exit]

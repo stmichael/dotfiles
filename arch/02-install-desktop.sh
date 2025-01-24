@@ -81,6 +81,11 @@ sudo pacman -S hypridle
 # wallpaper
 sudo pacman -S wpaperd
 
+# pluggable media
+# mounting happens automatically
+# to unmount use `udiskie-umount -e /dev/sdb1`
+sudo pacman -S udiskie
+
 # bluetooth
 sudo pacman -S bluez bluez-utils
 sudo systemctl enable bluetooth
