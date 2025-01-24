@@ -142,5 +142,11 @@
     {
         "key": "ctrl+alt+pageup",
         "command": "workbench.action.moveEditorToLeftGroup"
+    },
+
+    // Fix paste issue
+    {
+        "key": "ctrl+v",
+        "command": "-editor.action.clipboardPasteAction"
     }
 ]
