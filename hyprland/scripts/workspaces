@@ -1,5 +1,87 @@
 #!/bin/sh
 
+set_workspace_layout() {
+  local mode=$1
+  if [[ $mode = "single" ]]; then
+    set_single_monitor_layout
+  elif [[ $mode = "dual" ]]; then
+    set_dual_monitor_layout
+  elif [[ $mode = "presentation" ]]; then
+    set_presentation_layout
+  fi
+}
+
+set_single_monitor_layout() {
+  local monitorId=$(get_laptop_monitor_id)
+  echo "Moving all workspaces to monitor $monitorId"
+  move_workspace_to_monitor 1 $monitorId
+  move_workspace_to_monitor 2 $monitorId
+  move_workspace_to_monitor 3 $monitorId
+  move_workspace_to_monitor 4 $monitorId
+  move_workspace_to_monitor 5 $monitorId
+}
+
+set_dual_monitor_layout() {
+  local laptopMonitorId=$(get_laptop_monitor_id)
+  local externalMonitorId=$(get_external_monitor_id)
+
+  echo "Moving workspace 1 to monitor $laptopMonitorId"
+  move_workspace_to_monitor 1 $laptopMonitorId
+
+  echo "Moving other workspaces to monitor $externalMonitorId"
+  move_workspace_to_monitor 2 $externalMonitorId
+  move_workspace_to_monitor 3 $externalMonitorId
+  move_workspace_to_monitor 4 $externalMonitorId
+  move_workspace_to_monitor 5 $externalMonitorId
+}
+
+set_presentation_layout() {
+  local laptopMonitorId=$(get_laptop_monitor_id)
+  local externalMonitorId=$(get_external_monitor_id)
+
+  echo "Moving workspaces 1-4 to monitor $laptopMonitorId"
+  move_workspace_to_monitor 1 $laptopMonitorId
+  move_workspace_to_monitor 2 $laptopMonitorId
+  move_workspace_to_monitor 3 $laptopMonitorId
+  move_workspace_to_monitor 4 $laptopMonitorId
+
+  echo "Moving workspace 5 to monitor $externalMonitorId"
+  move_workspace_to_monitor 5 $externalMonitorId
+}
+
+move_workspace_to_monitor() {
+  local workspace=$1
+  local monitor=$2
+
+  if [[ $DRY_RUN -eq 1 ]]
+  then
+    echo "-> hyprctl dispatch moveworkspacetomonitor $workspace $monitor"
+    echo "-> hyprctl keyword workspace $workspace, $monitor"
+  else
+    hyprctl dispatch moveworkspacetomonitor $workspace $monitor > /dev/null
+    hyprctl keyword workspace $workspace, $monitor > /dev/null
+  fi
+}
+
+get_laptop_monitor_id() {
+  hyprctl monitors -j | jq 'map(select(.name=="eDP-1")) | first | .id'
+}
+
+get_external_monitor_id() {
+  hyprctl monitors -j | jq 'map(select(.name!="eDP-1")) | first | .id'
+}
+
+listen_to_monitor_change() {
+  # Update the monitors initially
+  handle_monitor_change
+
+  socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line
+  do
+    echo $line
+    handle_event "$line"
+  done
+}
+
 handle_event() {
   # Possible events:
   # monitoraddedv2>>1,DP-3,BNQ BenQ PD2710QC RAJ0256801Q
@@ -23,99 +105,21 @@ handle_monitor_change() {
   fi
 }
 
-setup_single_monitor_layout() {
-  wlrlui -m
-
-  local monitorId=$(hyprctl monitors -j | jq '.[].id')
-  echo "Moving all workspaces to monitor $monitorId"
-  move_workspace_to_monitor 1 $monitorId
-  move_workspace_to_monitor 2 $monitorId
-  move_workspace_to_monitor 3 $monitorId
-  move_workspace_to_monitor 4 $monitorId
-}
-
-setup_two_monitor_layout() {
-  wlrlui -m
-
-  local index=0
-  hyprctl monitors -j | jq -r '.[].id' | sort -n | while read -r monitorId
-  do
-    if [[ $index -eq 0 ]]
-    then
-      echo "Moving workspace 1 to monitor $monitorId"
-      move_workspace_to_monitor 1 $monitorId
-    elif [[ $index -eq 1 ]]
-    then
-      echo "Moving other workspaces to monitor $monitorId"
-      move_workspace_to_monitor 2 $monitorId
-      move_workspace_to_monitor 3 $monitorId
-      move_workspace_to_monitor 4 $monitorId
-    fi
-    index=$((index+1))
-  done
-}
-
-setup_presentation_layout() {
-  wlrlui -m
-
-  local index=0
-  hyprctl monitors -j | jq -r '.[].id' | sort -n | while read -r monitorId
-  do
-    if [[ $index -eq 0 ]]
-    then
-      echo "Moving other workspaces to monitor $monitorId"
-      move_workspace_to_monitor 1 $monitorId
-      move_workspace_to_monitor 2 $monitorId
-      move_workspace_to_monitor 3 $monitorId
-    elif [[ $index -eq 1 ]]
-    then
-      echo "Moving workspace 4 to monitor $monitorId"
-      move_workspace_to_monitor 4 $monitorId
-    fi
-    index=$((index+1))
-  done
-}
-
-move_workspace_to_monitor() {
-  local workspace=$1
-  local monitor=$2
-
-  if [[ $DRY_RUN -eq 1 ]]
-  then
-    echo "-> hyprctl dispatch moveworkspacetomonitor $workspace $monitor"
-    echo "-> hyprctl keyword workspace $workspace, $monitor"
-  else
-    hyprctl dispatch moveworkspacetomonitor $workspace $monitor > /dev/null
-    hyprctl keyword workspace $workspace, $monitor > /dev/null
-  fi
-}
-
-listen_to_monitor_change() {
-  # Update the monitors initially
-  handle_monitor_change
-
-  socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line
-  do
-    echo $line
-    handle_event "$line"
-  done
-}
-
 usage() {
-    echo "Usage: $0 ACTION [--dry-run]"
+    echo "Usage: $0 --set MODE [--dry-run]"
     echo "Adjust workspaces to the monitor layout."
     echo ""
-    echo "ACTION can be any of:"
-    echo " fix: adjusts the workspaces according to the monitor layout"
-    echo "            at the time of invocation."
-    echo " follow-monitors: listens the monitor changes on the hyprland"
-    echo "                        event socket and adjusts the workspaces whenever"
-    echo "                        you plug or unplug a monitor."
-    echo " presentation: use the laptop monitor as primary and the external"
-    echo "               monitor as secondary display."
     echo "Options:"
-    echo " -h, --help This help"
-    echo " --dry-run  Doesn't perform any workspace rearrangements, only prints what it would do"
+    echo " -h, --help   This help"
+    echo " --dry-run    Doesn't perform any workspace rearrangements, only prints what it would do"
+    echo " --set [MODE] Distributes the workspaces according to MODE."
+    echo ""
+    echo "MODE can be any of:"
+    echo " single: moves all workspaces to the first (and only) monitor"
+    echo " dual: moves the first workspace to the laptops monitor"
+    echo "       and the other workspaces to the external monitor."
+    echo " presentation: moves the first four workspaces to the laptop monitor"
+    echo "               and the fifth workspaces to the external monitor."
     exit 1
 }
 
@@ -126,27 +130,23 @@ while [[ $# -gt 0 ]]; do
       usage
       shift
       ;;
-    --dry-run)
-      DRY_RUN=1
+    --set)
+      ACTION="set"
+      shift
+      MODE=$1
       shift
       ;;
-    *)
-      ACTION=$1
+    --dry-run)
+      DRY_RUN=1
       shift
       ;;
   esac
 done
 
-if [[ $ACTION = "fix" ]]
+if [[ $ACTION = "set" ]]
 then
-  handle_monitor_change
-elif [[ $ACTION = "follow-monitors" ]]
-then
-  listen_to_monitor_change
-elif [[ $ACTION = "presentation" ]]
-then
-  setup_presentation_layout
+  set_workspace_layout $MODE
 else
-  echo "Unknown action $ACTION"
+  echo "Don't know what to do"
   exit 1
 fi
