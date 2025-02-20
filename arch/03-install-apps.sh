@@ -45,7 +45,7 @@ yay -S slack-desktop-wayland
 sudo pacman -S tmux
 
 # kubectl
-sudo pacman -S kubectl
+sudo pacman -S kubectl k9s
 
 # LibreOffice
 sudo pacman -S libreoffice-still
