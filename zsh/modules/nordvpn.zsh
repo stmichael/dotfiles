@@ -22,8 +22,9 @@ nord-disconnect() {
 }
 
 nord-update() {
+  rm -rf ~/.config/nordvpn/profiles
   mkdir -p ~/.config/nordvpn/profiles
-  rm -f ~/.config/nordvpn/profiles/ovpn.zip 2> /dev/null
+  rm -f ~/.config/nordvpn/profiles/ovpn.zip
   curl -o ~/.config/nordvpn/profiles/ovpn.zip https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
   unzip ~/.config/nordvpn/profiles/ovpn.zip -d ~/.config/nordvpn/profiles
   rm -f ~/.config/nordvpn/profiles/ovpn.zip
