@@ -16,3 +16,4 @@ link_file ./monitors.conf ~/.config/hypr/monitors.conf
 link_file ./hyprland.conf ~/.config/hypr/hyprland.conf
 link_file ./scripts/workspaces ~/bin/workspaces
 link_file ./scripts/monitor ~/bin/monitor
+download_file https://github.com/catppuccin/hyprland/raw/refs/heads/main/themes/mocha.conf ~/.config/hypr/catpuccin-mocha.conf
