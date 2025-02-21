@@ -4,11 +4,15 @@
     "files.insertFinalNewline": true,
     "explorer.confirmDragAndDrop": false,
     "editor.tabSize": 2,
-    "workbench.colorTheme": "Houston",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.preferredDarkColorTheme": "Houston",
     "workbench.preferredLightColorTheme": "Vitesse Light",
     "redhat.telemetry.enabled": false,
     "editor.wordWrap": "on",
     "window.enableMenuBarMnemonics": false,
-    "workbench.editor.dragToOpenWindow": false
+    "workbench.editor.dragToOpenWindow": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.iconTheme": "catppuccin-mocha"
 }
