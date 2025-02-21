@@ -25,6 +25,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=green"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ~/.config/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 # Magic zstyles
 # -------
