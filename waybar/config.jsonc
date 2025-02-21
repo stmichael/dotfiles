@@ -1,172 +1,172 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
-    "modules-center": [
-        "hyprland/language",
-        "hyprland/submap"
-    ],
-    "modules-right": [
-        "mpris",
-        "pulseaudio",
-        "bluetooth",
-        "network",
-        "custom/cups",
-        "backlight",
-        "custom/workspace-layout",
-        "battery",
-        "power-profiles-daemon",
-        "clock",
-        "custom/power"
-    ],
-    "hyprland/workspaces": {
-        "format": "{name}",
-        "active-only": true,
-        "all-outputs": false
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 0,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/submap"
+  ],
+  "modules-center": [
+    "hyprland/language"
+  ],
+  "modules-right": [
+    "mpris",
+    "pulseaudio",
+    "custom/separator",
+    "bluetooth",
+    "network",
+    "custom/separator",
+    "custom/cups",
+    "custom/separator",
+    "backlight",
+    "custom/workspace-layout",
+    "custom/separator",
+    "battery",
+    "power-profiles-daemon",
+    "custom/separator",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "\uf4c3",
+      "active": "\uf444"
     },
-    "hyprland/submap": {
-        "format": "\uf11c {}"
+    "active-only": true,
+    "all-outputs": false
+  },
+  "hyprland/submap": {
+    "format": "\uf11c {}"
+  },
+  "mpris": {
+    "format": "{status_icon}",
+    "tooltip-format": "{player} {dynamic}",
+    "status-icons": {
+      "playing": "\uf04b",
+      "paused": "\uf04c",
+      "stopped": "\uf04d"
+    }
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) \u2e28{songPosition}|{queueLength}\u2e29 {volume}% \uf001",
+    "format-disconnected": "Disconnected \uf001",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped \uf001",
+    "unknown-tag": "N/A",
+    "interval": 5,
+    "consume-icons": {
+      "on": "\uf0c4 "
     },
-    "mpris": {
-        "format": "{status_icon}",
-        "tooltip-format": "{player} {dynamic}",
-        "status-icons": {
-            "playing": "\uf04b",
-            "paused": "\uf04c",
-            "stopped": "\uf04d"
-        }
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\">\uf074</span> ",
+      "on": "\uf074 "
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) \u2e28{songPosition}|{queueLength}\u2e29 {volume}% \uf001",
-        "format-disconnected": "Disconnected \uf001",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped \uf001",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": "\uf0c4 "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\">\uf074</span> ",
-            "on": "\uf074 "
-        },
-        "repeat-icons": {
-            "on": "\uf01e "
-        },
-        "single-icons": {
-            "on": "\uf01e1 "
-        },
-        "state-icons": {
-            "paused": "\uf04c",
-            "playing": "\uf04b"
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+    "repeat-icons": {
+      "on": "\uf01e "
     },
-    "pulseaudio": {
-        "format": "{volume}% \uf027 {format_source}",
-        "format-muted": "0% \ueee8 {format_source}",
-        "format-source": "{volume}% \uf130",
-        "format-source-muted": "0% \uf131"
+    "single-icons": {
+      "on": "\uf01e1 "
     },
-    "bluetooth": {
-        "format-off": "\udb80\udcb2",
-        "format-on": "\udb80\udcaf",
-        "format-connected": "\udb80\udcb1 {device_battery_percentage}%",
-        "tooltip-format": "{num_connections} devices connected",
-    	"tooltip-format-connected": "{device_enumerate}",
-	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
-        "on-click": "alacritty -e bluetuith"
+    "state-icons": {
+      "paused": "\uf04c",
+      "playing": "\uf04b"
     },
-    "cpu": {
-        "format": "{usage}% \uf2db",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% \uf0c9"
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}\u00b0C {icon}",
-        "format": "{temperatureC}\u00b0C {icon}",
-        "format-icons": ["\uf76b", "\uf2c9", "\uf769"]
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "pulseaudio": {
+    "format": "{volume}% \uf027 {format_source}",
+    "format-muted": "0% \ueee8 {format_source}",
+    "format-source": "{volume}% \uf130",
+    "format-source-muted": "0% \uf131"
+  },
+  "bluetooth": {
+    "format-off": "\udb80\udcb2",
+    "format-on": "\udb80\udcaf",
+    "format-connected": "\udb80\udcb1 {device_battery_percentage}%",
+    "tooltip-format": "{num_connections} devices connected",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
+    "on-click": "alacritty -e bluetuith"
+  },
+  "cpu": {
+    "format": "{usage}% \uf2db",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}% \uf0c9"
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}\u00b0C {icon}",
+    "format": "{temperatureC}\u00b0C {icon}",
+    "format-icons": ["\uf76b", "\uf2c9", "\uf769"]
     },
     "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": ["\ue38d", "\ue3d3", "\ue3d1", "\ue3cf", "\ue3ce", "\ue3cd", "\ue3ca", "\ue3c8", "\ue39b"]
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["\ue38d", "\ue3d3", "\ue3d1", "\ue3cf", "\ue3ce", "\ue3cd", "\ue3ca", "\ue3c8", "\ue39b"]
+  },
+  "battery": {
+    "interval": 20,
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "battery": {
-        "interval": 20,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% \uf1e6",
-        "format-plugged": "{capacity}% \uf1e6",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "\uf0e7",
-        "performance": "\uf0e7",
-        "balanced": "\uf24e",
-        "power-saver": "\uf06c"
-      }
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} \uf1eb",
-        "format-ethernet": "{ipaddr} \uf796",
-        "format-linked": "{ifname} (No IP) \uf796",
-        "format-disconnected": "Disconnected \u26a0",
-        "tooltip-format": "{ipaddr}"
-    },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d %H:%M}"
-    },
-    "custom/power": {
-        "format" : "\u23fb",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/modules/power-menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "systemctl poweroff",
-			"reboot": "systemctl reboot"
-		}
-    },
-    "custom/cups": {
-        "format": "{} \uf02f",
-        "return-type": "json",
-        "exec": "$HOME/.config/waybar/modules/cups.sh",
-        "interval": 30,
-        "tooltip": true
-    },
-    "custom/workspace-layout": {
-        "format": "\udb82\ude07",
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/modules/workspaces-menu.xml",
-        "menu-actions": {
-            "single": "workspaces --set single",
-            "dual": "workspaces --set dual",
-            "presentation": "workspaces --set presentation"
-        }
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% \uf1e6",
+    "format-plugged": "{capacity}% \uf1e6",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "\uf0e7",
+      "performance": "\uf0e7",
+      "balanced": "\uf24e",
+      "power-saver": "\uf06c"
     }
+  },
+  "network": {
+    "format-wifi": "{essid} \uf1eb",
+    "format-ethernet": "{ipaddr} \uf796",
+    "format-linked": "{ifname} (No IP) \uf796",
+    "format-disconnected": "Disconnected \u26a0",
+    "tooltip-format": "{ipaddr}"
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%Y-%m-%d %H:%M}"
+  },
+  "custom/cups": {
+    "format": "{} \uf02f",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/cups.sh",
+    "interval": 30,
+    "tooltip": true
+  },
+  "custom/workspace-layout": {
+    "format": "\udb82\ude07",
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/modules/workspaces-menu.xml",
+    "menu-actions": {
+      "single": "workspaces --set single",
+      "dual": "workspaces --set dual",
+      "presentation": "workspaces --set presentation"
+    }
+  },
+  "custom/separator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  }
 }

@@ -1,49 +1,78 @@
+@import 'mocha.css';
+
 * {
-    font-size: 13px;
-    font-family: Roboto;
+  font-size: 13px;
+  font-family: Roboto;
+  color: @text;
+  margin: 0;
 }
 
+/*
+ * -----------------------
+ * Bar
+ * -----------------------
+ */
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background: transparent;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+.modules-left, .modules-center, .modules-right {
+  border-radius: 0 0 0.8em 0.8em;
+  background-color: @base;
+  padding: 0 10px;
 }
 
-.modules-right > widget > .module {
-    padding: 0 4px;
-}
-.modules-center > widget > .module {
-    padding: 0 4px;
+.modules-left {
+  margin-left: 10px;
 }
 
-#workspaces button {
-    color: white;
-    background: transparent;
+.modules-right {
+  margin-right: 10px;
 }
 
-#workspaces button.active {
-    background: rgba(128, 128, 128, 0.5);
-    border-bottom: 2px solid white;
+widget > .module {
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
-#workspaces button.urgent {
-    border-bottom: 2px solid rgb(223, 54, 54);
+#custom-separator {
+  padding: 0;
+  margin: 0 6px;
+  color: @surface1;
+  font-size: 23px;
 }
 
+/*
+ * -----------------------
+ * Workspaces
+ * -----------------------
+ */
+#workspaces label {
+  font-size: 25px;
+  color: @overlay1;
+}
+
+#workspaces .urgent label {
+  color: @red;
+}
+
+#workspaces .active label {
+  color: @green;
+}
+
+/*
+ * -----------------------
+ * Battery
+ * -----------------------
+ */
 #battery.charging, #battery.plugged {
-    color: rgb(38, 219, 38);
+  color: @green;
 }
 
 #battery.warning:not(.charging) {
-    color: rgb(204, 137, 13);
+  color: @peach;
 }
 
 #battery.critical:not(.charging) {
-    color: rgb(214, 59, 59);
+  color: @red;
 }
