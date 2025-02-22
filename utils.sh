@@ -42,9 +42,9 @@ absolute_path() {
 }
 
 download_file() {
+    mkdir -p "$(dirname "$2")"
     local url=$1
     local target=$(absolute_path "$2")
 
-    mkdir -p "$(dirname "$target")"
     curl -L -o "$target" "$url"
 }
