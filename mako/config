@@ -14,8 +14,6 @@ on-button-right=dismiss
 on-touch=invoke-default-action
 on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
-width=299
-height=99
 format= <b>%s</b>\n%b
 text-alignment=center
 
@@ -25,23 +23,18 @@ icon-location=left
 actions=1
 
 font= monospace 10
-background-color=#111613
-text-color=#FFFFFF
-progress-color=over #0b1c1c
-border-color=#88c0d0
 outer-margin=1
 margin=0
 padding=10
 border-size=1
 border-radius=0
 
-[urgency=low]
-border-color=#cccccc
+# Colors
 
-[urgency=normal]
-border-color=#d08770
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#b4befe
+progress-color=over #313244
 
 [urgency=high]
-border-color=#bf616a
-border-size=3
-default-timeout=0
+border-color=#fab387

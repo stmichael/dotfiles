@@ -7,4 +7,5 @@ cd $BASEDIR
 
 source ../utils.sh
 
-link_file ./config ~/.config/mako/config
+cp ./config ~/.config/mako/config
+curl -L https://github.com/catppuccin/mako/raw/refs/heads/main/themes/catppuccin-mocha/catppuccin-mocha-lavender >> ~/.config/mako/config
