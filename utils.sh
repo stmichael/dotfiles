@@ -45,5 +45,6 @@ download_file() {
     local url=$1
     local target=$(absolute_path "$2")
 
+    mkdir -p "$(dirname "$target")"
     curl -L -o "$target" "$url"
 }
