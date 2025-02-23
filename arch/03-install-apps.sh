@@ -43,6 +43,7 @@ yay -S slack-desktop-wayland
 
 # tmux
 sudo pacman -S tmux
+yay -S tmux-plugin-manager
 
 # kubectl
 sudo pacman -S kubectl k9s
