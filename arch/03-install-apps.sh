@@ -9,7 +9,7 @@ yay -S archey4
 sudo pacman -S code
 
 # zsh
-sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting fzf
+sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting fzf starship
 chsh -s /bin/zsh
 
 # lazygit

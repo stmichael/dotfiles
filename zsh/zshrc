@@ -10,9 +10,6 @@ source "$ZSH_CONFIG_HOME/completion.zsh"
 # Key bindings
 source "$ZSH_CONFIG_HOME/key-bindings.zsh"
 
-# Prompt
-source "$ZSH_CONFIG_HOME/prompt.zsh"
-
 # Modules
 source "$ZSH_CONFIG_HOME/modules/ls.zsh"
 source "$ZSH_CONFIG_HOME/modules/git.zsh"
@@ -23,3 +20,6 @@ source "$ZSH_CONFIG_HOME/modules/nordvpn.zsh"
 source "$ZSH_CONFIG_HOME/modules/pacman.zsh"
 source "$ZSH_CONFIG_HOME/modules/lazygit.zsh"
 source "$ZSH_CONFIG_HOME/modules/yazi.zsh"
+
+# Prompt
+eval "$(starship init zsh)"

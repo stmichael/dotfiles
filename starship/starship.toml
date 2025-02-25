@@ -1,0 +1,44 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$character\
+[\ue0b0](fg:base bg:overlay1)\
+$username\
+[\ue0b1](bold fg:base bg:overlay1)\
+$directory\
+[\ue0b1](bold fg:base bg:overlay1)\
+$git_branch\
+[\ue0b1](bold fg:base bg:overlay1)\
+$kubernetes\
+[\ue0b0](fg:overlay1 bg:base)\
+\n[ \uf061 ](fg:text)
+"""
+palette = 'catppuccin_mocha'
+
+[character]
+disabled = false
+success_symbol = '[  ](bold fg:green bg:overlay1)[](fg:overlay1)'
+error_symbol = '[  ](bold fg:red bg:overlay1)[](fg:overlay1)'
+
+[username]
+show_always = true
+style_user = "fg:text bg:overlay1"
+style_root = "fg:text bg:overlay1"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:text bg:overlay1"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "fg:text bg:overlay1"
+format = '[ $symbol $branch ]($style)'
+
+[kubernetes]
+disabled = false
+style = "fg:text bg:overlay1"
+format = '[ $symbol $context ]($style)'
+
