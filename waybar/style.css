@@ -5,6 +5,7 @@
   font-family: Roboto;
   color: @text;
   margin: 0;
+  transition: none;
 }
 
 /*
@@ -35,6 +36,23 @@ widget > .module {
   padding-right: 4px;
 }
 
+button:hover {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+
+  border: 1px solid @lavender;
+  box-shadow: 0 0 4px @lavender, inset 0 0 4px @lavender;
+}
+
+button:hover label {
+  color: @lavender;
+}
+
+label {
+  color: @subtext0;
+}
+
 #custom-separator {
   padding: 0;
   margin: 0 6px;
@@ -49,7 +67,6 @@ widget > .module {
  */
 #workspaces label {
   font-size: 25px;
-  color: @overlay1;
 }
 
 #workspaces .urgent label {
@@ -57,7 +74,7 @@ widget > .module {
 }
 
 #workspaces .active label {
-  color: @green;
+  color: @lavender;
 }
 
 /*
