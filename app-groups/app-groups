@@ -17,7 +17,10 @@ open_group() {
 
 launch() {
   echo "Launching $1"
-  ( eval $1 > /dev/null 2>&1 & )
+  local program=$(echo "$1" | cut -d ' ' -f 1)
+  local args=$(echo "$1" | cut -d ' ' -f 2-)
+  local resolved_args=$(eval "echo $args")
+  daemonize $(which $program) $resolved_args
 }
 
 usage() {

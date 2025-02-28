@@ -10,6 +10,7 @@ sudo pacman -S code
 
 # zsh
 sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting fzf starship
+yay -S daemonize
 chsh -s /bin/zsh
 
 # lazygit
