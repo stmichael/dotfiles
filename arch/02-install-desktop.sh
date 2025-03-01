@@ -130,3 +130,7 @@ sudo umount /mnt/usb
 
 # clipboard
 sudo pacman -S cliphist
+
+# Blu-ray
+# Follow instruction at https://wiki.archlinux.org/title/Blu-ray
+sudo pacman -S libbluray libaacs
