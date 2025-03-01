@@ -1,0 +1,120 @@
+#!/bin/sh
+
+CONFIG_FOLDER=~/.config/nordvpn
+
+connect() {
+  local country=$1
+  local file
+
+  if [[ $(status) = "connected" ]]
+  then
+    echo "OpenVPN is already running"
+    exit 1
+  fi
+
+  if [[ -z $country ]]
+  then
+    file=$(ls -1 $CONFIG_FOLDER/profiles/ovpn_udp/ | shuf -n 1)
+  else
+    file=$(ls -1 $CONFIG_FOLDER/profiles/ovpn_udp/$country* | shuf -n 1)
+  fi
+
+  # disable IPv6
+  sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 > /dev/null
+  sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 > /dev/null
+
+  echo "Connecting using config $file"
+  sudo daemonize -e nordvpn.log -o nordvpn.log $(which openvpn) --config $file --auth-user-pass $CONFIG_FOLDER/service-credentials
+
+  wait_for_status "connected"
+
+  rm -f nordvpn.log
+}
+
+wait_for_status() {
+  local counter=0
+  local desired_status=$1
+
+  while [ ! "$(status)" = "$desired_status" ]; do
+    sleep 0.1
+    counter=$((counter + 1))
+    if [ $counter -ge 50 ]; then
+      echo "Waited for 5 seconds. Abourting connection"
+      exit 1
+    fi
+  done
+}
+
+status() {
+  nmcli connection show tun0 >/dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    echo "connected"
+  else
+    echo "disconnected"
+  fi
+}
+
+disconnect() {
+  sudo killall openvpn
+  wait_for_status "disconnected"
+}
+
+update_configurations() {
+  rm -rf $CONFIG_FOLDER/profiles
+  mkdir -p $CONFIG_FOLDER/profiles
+  rm -f $CONFIG_FOLDER/profiles/ovpn.zip
+  curl -o $CONFIG_FOLDER/profiles/ovpn.zip https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
+  unzip $CONFIG_FOLDER/profiles/ovpn.zip -d $CONFIG_FOLDER/profiles
+  rm -f $CONFIG_FOLDER/profiles/ovpn.zip
+}
+
+usage() {
+  echo "Usage: $0 ACTION [OPTIONS]"
+  echo "Allows you to interact with groups of applications."
+  echo ""
+  echo "ACTION can be any of:"
+  echo " connect: connects to a NordVPN"
+  echo " disconnect: disconnects from NordVPN"
+  echo " status: displays the NordVPN connection status"
+  echo " update: downloads a new set of NordVPN configurations"
+  echo ""
+  echo "Options:"
+  echo " -c, --country ID Connect to a VPN server in a specific country"
+  echo " -h, --help       This help"
+  exit 1
+}
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      usage
+      shift
+      ;;
+    -c|--country)
+      COUNTRY=$2
+      shift
+      shift
+      ;;
+    *)
+      ACTION=$1
+      shift
+      ;;
+  esac
+done
+
+if [[ $ACTION = "connect" ]]
+then
+  connect $COUNTRY
+elif [[ $ACTION = "disconnect" ]]
+then
+  disconnect
+elif [[ $ACTION = "status" ]]
+then
+  status
+elif [[ $ACTION = "update" ]]
+then
+  update_configurations
+else
+  echo "Unknown action $ACTION"
+  exit 1
+fi

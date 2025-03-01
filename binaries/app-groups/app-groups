@@ -44,14 +44,6 @@ while [[ $# -gt 0 ]]; do
       usage
       shift
       ;;
-    --dry-run)
-      DRY_RUN=1
-      shift
-      ;;
-    --safe)
-      SAFE=1
-      shift
-      ;;
     *)
       ACTION=$1
       if [[ $ACTION == "open" ]]; then
