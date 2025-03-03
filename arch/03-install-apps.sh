@@ -37,7 +37,8 @@ sudo pacman -S bitwarden-cli
 sudo pacman -S nfs-utils
 
 # Java
-yay -S jbang
+sudo pacman -S zip
+curl -s "https://get.sdkman.io" | bash
 
 # slack
 yay -S slack-desktop-wayland
