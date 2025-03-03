@@ -76,7 +76,7 @@ fi' | sudo tee /usr/bin/pulseaudio
 sudo chmod a+x /usr/bin/pulseaudio
 
 # docker
-sudo pacman -S docker
+sudo pacman -S docker docker-comose
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo usermod -aG docker stmichael
