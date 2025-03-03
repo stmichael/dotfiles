@@ -28,7 +28,6 @@
     "custom/separator",
     "cpu",
     "memory",
-    "temperature",
     "custom/separator",
     "clock"
   ],
@@ -46,7 +45,8 @@
   },
   "mpris": {
     "format": "{status_icon}    {dynamic}",
-    "title-len": 50,
+    "title-len": 30,
+    "artist-len": 15,
     "status-icons": {
       "playing": "\uf04b",
       "paused": "\uf04c",
@@ -77,11 +77,6 @@
   },
   "memory": {
     "format": "\uf0c9 {}%"
-  },
-  "temperature": {
-    "critical-threshold": 80,
-    "format": "{icon} {temperatureC}\u00b0C",
-    "format-icons": ["\uf76b", "\uf2c9", "\uf769"]
   },
   "backlight": {
     "device": "intel_backlight",
