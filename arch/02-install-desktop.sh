@@ -32,9 +32,12 @@ sudo systemctl start ly
 sudo sed -i 's/animation=.*/animation=matrix/g' /etc/ly/config.ini
 
 # Add firmware update daemon
-sudo pacman -S fwupd udisks2
+sudo pacman -S fwupd
 sudo systemctl enable fwupd
 sudo systemctl start fwupd
+
+# Add udiskie
+sudo pacman -S udisks2
 sudo systemctl enable udisks2
 sudo systemctl start udisks2
 
