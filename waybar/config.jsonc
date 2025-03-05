@@ -21,7 +21,6 @@
     "custom/cups",
     "custom/separator",
     "backlight",
-    "custom/workspace-layout",
     "custom/separator",
     "battery",
     "power-profiles-daemon",
@@ -123,16 +122,6 @@
     "exec": "$HOME/.config/waybar/modules/cups.sh",
     "interval": 30,
     "tooltip": true
-  },
-  "custom/workspace-layout": {
-    "format": "\udb82\ude07",
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/modules/workspaces-menu.xml",
-    "menu-actions": {
-      "single": "workspaces --set single",
-      "dual": "workspaces --set dual",
-      "presentation": "workspaces --set presentation"
-    }
   },
   "custom/separator": {
     "format": "|",
