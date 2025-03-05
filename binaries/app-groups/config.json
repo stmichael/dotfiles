@@ -3,15 +3,15 @@
     "dotfiles": {
       "name": "dotfiles",
       "applications": [
-        "alacritty --working-directory=$HOME/dotfiles",
+        "daemonize /sbin/alacritty --working-directory=$HOME/dotfiles",
         "code ~/dotfiles"
       ]
     },
     "communication": {
       "name": "Communication",
       "applications": [
-        "/usr/bin/slack --disable-gpu-compositing --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --disable-features=WaylandFractionalScaleV1 -s %U",
-        "thunderbird"
+        "daemonize /usr/bin/slack --disable-gpu-compositing --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --disable-features=WaylandFractionalScaleV1 -s %U",
+        "daemonize /sbin/thunderbird"
       ]
     },
     "spoud": {
@@ -23,14 +23,14 @@
     "notes": {
       "name": "Notes",
       "applications": [
-        "alacritty --working-directory=$HOME/projects/notes",
+        "daemonize /sbin/alacritty --working-directory=$HOME/projects/notes",
         "code ~/projects/notes"
       ]
     },
     "finnova": {
       "name": "Finnova",
       "applications": [
-        "alacritty --working-directory=$HOME/projects/finnova",
+        "daemonize /sbin/alacritty --working-directory=$HOME/projects/finnova",
         "brave --profile-directory=Profile\\ 4"
       ]
     }

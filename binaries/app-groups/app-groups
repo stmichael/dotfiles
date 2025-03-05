@@ -9,6 +9,7 @@ list_groups() {
 open_group() {
   local name=$1
   echo "Opening application group $1"
+  jq -r ".groups.$name.applications[]" $CONFIG
   jq -r "try(.groups.$name.applications[])" $CONFIG | while read -r application
   do
     launch "$application"
@@ -17,10 +18,7 @@ open_group() {
 
 launch() {
   echo "Launching $1"
-  local program=$(echo "$1" | cut -d ' ' -f 1)
-  local args=$(echo "$1" | cut -d ' ' -f 2-)
-  local resolved_args=$(eval "echo $args")
-  daemonize $(which $program) $resolved_args
+  eval $1
 }
 
 usage() {
