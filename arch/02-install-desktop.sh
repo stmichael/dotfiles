@@ -37,7 +37,9 @@ sudo systemctl enable fwupd
 sudo systemctl start fwupd
 
 # Add udiskie
-sudo pacman -S udisks2
+# mounting happens automatically
+# to unmount use `udiskie-umount -e /dev/sdb1`
+sudo pacman -S udisks2 udiskie
 sudo systemctl enable udisks2
 sudo systemctl start udisks2
 
@@ -84,11 +86,6 @@ sudo pacman -S hypridle
 
 # wallpaper
 sudo pacman -S wpaperd
-
-# pluggable media
-# mounting happens automatically
-# to unmount use `udiskie-umount -e /dev/sdb1`
-sudo pacman -S udiskie
 
 # bluetooth
 sudo pacman -S bluez bluez-utils
