@@ -70,7 +70,7 @@ update_configurations() {
 
 usage() {
   echo "Usage: $0 ACTION [OPTIONS]"
-  echo "Allows you to interact with groups of applications."
+  echo "Manage NordVPN connections."
   echo ""
   echo "ACTION can be any of:"
   echo " connect: connects to a NordVPN"

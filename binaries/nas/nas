@@ -1,0 +1,74 @@
+#!/bin/sh
+
+BASE_MOUNT_POINT=/var/run/media/$USER
+
+mount() {
+  local name=$1
+  local mount_point="$BASE_MOUNT_POINT/$name"
+  local nas_folder="HueNAS:/volume1/$name"
+
+  rm -rf $mount_point
+  sudo mount --mkdir -t nfs -o vers=4 $nas_folder $mount_point
+  if [[ $? -eq 0 ]]
+  then
+    echo "NAS folder $name available at $mount_point"
+    notify-send "NAS folder $name available at $mount_point"
+  else
+    echo "Failed to mount $mount_point"
+    notify-send "Failed to mount $mount_point"
+  fi
+}
+
+unmount() {
+  local name=$1
+  local mount_point="$BASE_MOUNT_POINT/$name"
+
+  sudo umount "$mount_point"
+  if [[ $? -eq 0 ]]
+  then
+    echo "NAS folder $mount_point unmounted"
+    notify-send "NAS folder $name unmounted"
+  else
+    echo "Failed to unmount $mount_point"
+    notify-send "Failed to unmount $mount_point"
+  fi
+}
+
+usage() {
+  echo "Usage: $0 ACTION [OPTIONS] NAME"
+  echo "Mount and unmount NAS folders."
+  echo ""
+  echo "ACTION can be any of:"
+  echo " mount: mount a NAS folder"
+  echo " umount: unmount a NAS folder"
+  echo ""
+  echo "Options:"
+  echo " -h, --help This help"
+  exit 1
+}
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      usage
+      shift
+      ;;
+    *)
+      ACTION=$1
+      shift
+      NAME=$1
+      shift
+      ;;
+  esac
+done
+
+if [[ $ACTION = "mount" ]]
+then
+  mount $NAME
+elif [[ $ACTION = "umount" ]]
+then
+  unmount $NAME
+else
+  echo "Unknown action $ACTION"
+  exit 1
+fi
