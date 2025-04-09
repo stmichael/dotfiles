@@ -7,7 +7,7 @@ mount() {
   local mount_point="$BASE_MOUNT_POINT/$name"
   local nas_folder="HueNAS:/volume1/$name"
 
-  rm -rf $mount_point
+  sudo rm -rf $mount_point
   sudo mount --mkdir -t nfs -o vers=4 $nas_folder $mount_point
   if [[ $? -eq 0 ]]
   then
