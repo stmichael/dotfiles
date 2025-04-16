@@ -15,5 +15,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "workbench.iconTheme": "catppuccin-mocha",
-    "hediet.vscode-drawio.resizeImages": null
+    "hediet.vscode-drawio.resizeImages": null,
+    "editor.fontFamily": "'Symbols Nerd Font Mono','Droid Sans Mono', 'monospace', monospace"
 }
