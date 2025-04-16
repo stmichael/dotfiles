@@ -53,6 +53,9 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
 hwclock --systohc
+pacman -S ntp
+systemctl enable ntpd
+systemctl start ntpd
 
 # set pacman mirror list
 pacman -S reflector
