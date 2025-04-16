@@ -1,6 +1,3 @@
-[user]
-  name = Michael Stämpfli
-  email = michael.staempfli@gmail.com
 [color]
   diff = auto
   status = auto
@@ -22,3 +19,10 @@
   prompt = false
 [merge]
   tool = ediff
+
+[include]
+  path = .gitconfig-private
+[includeIf "gitdir:projects/spoud/"]
+	path = .gitconfig-spoud
+[includeIf "gitdir:projects/finnova/"]
+	path = .gitconfig-finnova
