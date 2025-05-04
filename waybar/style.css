@@ -17,9 +17,15 @@ window#waybar {
   background: transparent;
 }
 
-.modules-left, .modules-center, .modules-right {
-  border-radius: 0 0 0.8em 0.8em;
+window#waybar > box {
   background-color: @base;
+  margin: 0 2px 2px 2px;
+  border-right: 2px solid @overlay0;
+  border-bottom: 2px solid @overlay0;
+  border-left: 2px solid @overlay0;
+}
+
+.modules-left, .modules-center, .modules-right {
   padding: 0 10px;
 }
 
