@@ -19,10 +19,18 @@ prepend_previewers = [
 	{ mime = "application/xz",              run = "ouch" },
 ]
 
+[open]
+prepend_rules = [
+  { mime = "inode/directory", use = "code" }
+]
+
 [opener]
 play = [
   { run = 'vlc "$@"', orphan = true }
 ]
 extract = [
 	{ run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
+]
+code = [
+  { run = 'code "$@"', orphan = true }
 ]
