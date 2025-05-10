@@ -19,7 +19,7 @@ window#waybar {
 
 window#waybar > box {
   background-color: @base;
-  margin: 0 2px 2px 2px;
+  margin: 0 2px 0 2px;
   border-right: 2px solid @overlay0;
   border-bottom: 2px solid @overlay0;
   border-left: 2px solid @overlay0;
