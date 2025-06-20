@@ -1,0 +1,46 @@
+#!/bin/sh
+
+check() {
+  while true; do
+    bat_lvl=$(cat /sys/class/power_supply/BAT0/capacity)
+    if [ "$bat_lvl" -le 15 ]; then
+      notify-send --urgency=critical "Battery at ${bat_lvl}%"
+      sleep 1200
+    else
+      sleep 120
+    fi
+  done
+}
+
+usage() {
+  echo "Usage: $0 ACTION [OPTIONS]"
+  echo "Battery utilities."
+  echo ""
+  echo "ACTION can be any of:"
+  echo " check: continuously checks the battery and send notifications"
+  echo ""
+  echo "Options:"
+  echo " -h, --help This help"
+  exit 1
+}
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      usage
+      shift
+      ;;
+    *)
+      ACTION=$1
+      shift
+      ;;
+  esac
+done
+
+if [[ $ACTION = "check" ]]
+then
+  check
+else
+  echo "Unknown action $ACTION"
+  exit 1
+fi

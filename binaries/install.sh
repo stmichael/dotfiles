@@ -11,3 +11,4 @@ link_file ./app-groups/app-groups ~/bin/app-groups
 link_file ./app-groups/config.json ~/.config/app-groups/config.json
 link_file ./nordvpn/nordvpn ~/bin/nordvpn
 link_file ./nas/nas ~/bin/nas
+link_file ./battery/battery ~/bin/battery
