@@ -1,8 +1,8 @@
-[manager]
+[mgr]
 show_hidden = true
 linemode = "size"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["C"]
 run = "plugin ouch"
 desc = "Compress with ouch"
