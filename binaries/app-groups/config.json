@@ -17,13 +17,7 @@
     "spoud": {
       "name": "SPOUD",
       "applications": [
-        "brave --profile-directory=Profile\\ 3"
-      ]
-    },
-    "notes": {
-      "name": "Notes",
-      "applications": [
-        "daemonize /sbin/alacritty --working-directory=$HOME/projects/notes",
+        "daemonize /sbin/brave --profile-directory=Profile\\ 3",
         "code ~/projects/notes"
       ]
     },
@@ -31,7 +25,13 @@
       "name": "Finnova",
       "applications": [
         "daemonize /sbin/alacritty --working-directory=$HOME/projects/finnova",
-        "brave --profile-directory=Profile\\ 4"
+        "daemonize /sbin/brave --profile-directory=Profile\\ 4"
+      ]
+    },
+    "private": {
+      "name": "Private",
+      "applications": [
+        "daemonize /sbin/brave --profile-directory=Default"
       ]
     }
   }
