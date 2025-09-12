@@ -28,7 +28,7 @@ sudo pacman -S openvpn unzip
 sudo pacman -S thunderbird
 
 # vlc
-sudo pacman -S vlc
+sudo pacman -S vlc vlc-plugin-ffmpeg
 
 # bitwarden
 sudo pacman -S bitwarden-cli
