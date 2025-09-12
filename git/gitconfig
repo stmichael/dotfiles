@@ -26,3 +26,5 @@
 	path = .gitconfig-spoud
 [includeIf "gitdir:projects/finnova/"]
 	path = .gitconfig-finnova
+[init]
+	defaultBranch = main
