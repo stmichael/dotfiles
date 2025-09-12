@@ -16,5 +16,20 @@
     },
     "workbench.iconTheme": "catppuccin-mocha",
     "hediet.vscode-drawio.resizeImages": null,
-    "editor.fontFamily": "'Symbols Nerd Font Mono','Droid Sans Mono', 'monospace', monospace"
+    "editor.fontFamily": "'Symbols Nerd Font Mono','Droid Sans Mono', 'monospace', monospace",
+    "cSpell.language": "en,de-de",
+    "cSpell.userWords": [
+        "avro",
+        "debezium",
+        "ebus",
+        "finnova",
+        "jaas",
+        "logminer",
+        "openapi",
+        "sasl",
+        "spoud"
+    ],
+    "gradle.debug": true,
+    "database-client.autoSync": true,
+    "workbench.startupEditor": "none"
 }
