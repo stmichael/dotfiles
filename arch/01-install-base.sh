@@ -31,7 +31,7 @@ cryptsetup open /dev/nvme0n1p2 lvm
 pvcreate /dev/mapper/lvm
 vgcreate vg0 /dev/mapper/lvm
 lvcreate -L 4G -n swap vg0
-lvcreate -L 32G -n root vg0
+lvcreate -L 82G -n root vg0
 lvcreate -l 100%FREE -n home vg0
 
 mkswap /dev/vg0/swap
