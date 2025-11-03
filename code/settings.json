@@ -31,5 +31,18 @@
     ],
     "gradle.debug": true,
     "database-client.autoSync": true,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path-linux": "/home/stmichael/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }
