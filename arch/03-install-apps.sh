@@ -51,7 +51,8 @@ sudo pacman -S tmux
 yay -S tmux-plugin-manager
 
 # kubectl
-sudo pacman -S kubectl k9s
+sudo pacman -S kubectl kubectx k9s
+sudo pacman -S aws-cli-v2
 
 # LibreOffice
 sudo pacman -S libreoffice-still
