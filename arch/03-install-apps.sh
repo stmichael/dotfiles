@@ -16,6 +16,9 @@ chsh -s /bin/zsh
 # lazygit
 sudo pacman -S lazygit
 
+# lazydocker
+sudo pacman -S lazydocker
+
 # yazi
 sudo pacman -S yazi p7zip jq poppler fd ripgrep fzf zoxide imagemagick ueberzugpp
 sudo pacman -S ouch
