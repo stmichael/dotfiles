@@ -19,6 +19,7 @@ set_single_monitor_layout() {
   move_workspace_to_monitor 3 $monitorId
   move_workspace_to_monitor 4 $monitorId
   move_workspace_to_monitor 5 $monitorId
+  move_workspace_to_monitor 6 $monitorId
 }
 
 set_dual_monitor_layout() {
@@ -33,6 +34,7 @@ set_dual_monitor_layout() {
   move_workspace_to_monitor 3 $externalMonitorId
   move_workspace_to_monitor 4 $externalMonitorId
   move_workspace_to_monitor 5 $externalMonitorId
+  move_workspace_to_monitor 6 $externalMonitorId
 }
 
 set_presentation_layout() {
@@ -44,9 +46,10 @@ set_presentation_layout() {
   move_workspace_to_monitor 2 $laptopMonitorId
   move_workspace_to_monitor 3 $laptopMonitorId
   move_workspace_to_monitor 4 $laptopMonitorId
+  move_workspace_to_monitor 5 $laptopMonitorId
 
-  echo "Moving workspace 5 to monitor $externalMonitorId"
-  move_workspace_to_monitor 5 $externalMonitorId
+  echo "Moving workspace 6 to monitor $externalMonitorId"
+  move_workspace_to_monitor 6 $externalMonitorId
 }
 
 move_workspace_to_monitor() {
@@ -56,10 +59,8 @@ move_workspace_to_monitor() {
   if [[ $DRY_RUN -eq 1 ]]
   then
     echo "-> hyprctl dispatch moveworkspacetomonitor $workspace $monitor"
-    echo "-> hyprctl keyword workspace $workspace, $monitor"
   else
     hyprctl dispatch moveworkspacetomonitor $workspace $monitor > /dev/null
-    hyprctl keyword workspace $workspace, $monitor > /dev/null
   fi
 }
 
