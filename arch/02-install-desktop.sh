@@ -140,6 +140,8 @@ sudo pacman -S libfido2 yubikey-manager pam-u2f
 mkdir ~/.config/Yubico
 pamu2fcfg -o pam://stmichaels-host -i pam://stmichaels-host > ~/.config/Yubico/u2f_keys
 sudo sed -i '1a\auth            sufficient      pam_u2f.so cue origin=pam://stmichaels-host appid=pam://stmichaels-host' /etc/pam.d/sudo
+sudo sed -i '2a\auth       sufficient   pam_u2f.so cue origin=pam://stmichaels-host appid=pam://stmichaels-host' /etc/pam.d/ly
+sudo sed -i '3a\auth        sufficient  pam_u2f.so cue origin=pam://stmichaels-host appid=pam://stmichaels-host' /etc/pam.d/hyprlock
 
 # Android
 sudo pacman -S android-file-transfer
