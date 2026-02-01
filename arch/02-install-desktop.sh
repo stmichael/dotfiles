@@ -29,7 +29,7 @@ cd dotfiles
 sudo pacman -S ly
 sudo systemctl enable ly
 sudo systemctl start ly
-sudo sed -i 's/animation=.*/animation=matrix/g' /etc/ly/config.ini
+sudo sed -i 's/animation = .*/animation = none/g' /etc/ly/config.ini
 
 # Add firmware update daemon
 sudo pacman -S fwupd
