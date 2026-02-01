@@ -1,6 +1,0 @@
-[default]
-duration = "10m"
-mode = "center"
-
-[any]
-path = "~/wallpapers"
