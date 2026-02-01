@@ -87,3 +87,8 @@ sudo usermod -aG docker stmichael
 
 # bittorrent
 sudo pacman -S qbittorrent
+
+# Virtualbox
+# enable virtualization in BIOS first
+sudo pacman -S virtualbox virtualbox-host-modules-arch
+sudo modprobe vboxdrv
