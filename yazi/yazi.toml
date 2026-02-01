@@ -2,11 +2,6 @@
 show_hidden = true
 linemode = "size"
 
-[[mgr.prepend_keymap]]
-on = ["C"]
-run = "plugin ouch"
-desc = "Compress with ouch"
-
 [plugin]
 prepend_previewers = [
 	# Archive previewer

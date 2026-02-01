@@ -20,9 +20,10 @@ sudo pacman -S lazygit
 sudo pacman -S lazydocker
 
 # yazi
-sudo pacman -S yazi p7zip jq poppler fd ripgrep fzf zoxide imagemagick ueberzugpp
-sudo pacman -S ouch
+sudo pacman -S yazi p7zip jq poppler fd ripgrep fzf zoxide imagemagick ueberzugpp ouch
+sudo pacman -S gvfs glib2 gvfs-mtp gvfs-nfs gvfs-smb
 ya pack -a ndtoan96/ouch
+ya pkg add boydaihungst/gvfs
 
 # nordvpn
 sudo pacman -S openvpn unzip

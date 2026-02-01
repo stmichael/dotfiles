@@ -1,4 +1,26 @@
 [mgr]
 prepend_keymap = [
+  # ----- Projects ------
+  { on = [ "p", "p" ], run = "cd ~/projects", desc = "Go to base project folder" },
+  { on = [ "p", "s" ], run = "cd ~/projects/spoud", desc = "Go to SPOUD project" },
+  { on = [ "p", "f" ], run = "cd ~/projects/finnova", desc = "Go to Finnova project" },
+  { on = [ "p", "e" ], run = "cd ~/projects/ejpd", desc = "Go to EJPD project" },
+
+  # ----- Mount points ------
   { on = ["C"], run = "plugin ouch", desc = "Compress with ouch"},
+
+  # ----- Mount points ------
+  # Manage mount points (https://wiki.gnome.org/Projects(2f)gvfs(2f)schemes.html)
+  { on = [ "M", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
+  { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
+  { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
+  # Mount / unmount
+  { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount  --jump", desc = "Select device then mount" },
+  { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Select device then eject" },
+  # Jump to mount points
+  { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device", desc = "Select device then jump to its mount point" },
+
+  # ----- USB devices ------
+  { on = [ "U", "u" ], run = "shell -- udiskie-umount %s", desc = "Unmount USB device" },
+  { on = [ "g", "u" ], run = "cd /run/media/stmichael", desc = "Go to mounted USB devices" },
 ]
