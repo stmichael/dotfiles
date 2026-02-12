@@ -3,7 +3,7 @@
     "dotfiles": {
       "name": "dotfiles",
       "applications": [
-        "daemonize /sbin/alacritty --working-directory=$HOME/dotfiles",
+        "daemonize /sbin/kitty --working-directory=$HOME/dotfiles",
         "code ~/dotfiles"
       ]
     },
@@ -24,7 +24,7 @@
     "finnova": {
       "name": "Finnova",
       "applications": [
-        "daemonize /sbin/alacritty --working-directory=$HOME/projects/finnova",
+        "daemonize /sbin/kitty --working-directory=$HOME/projects/finnova",
         "daemonize /sbin/brave --profile-directory=Profile\\ 4"
       ]
     },

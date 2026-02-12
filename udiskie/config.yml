@@ -3,7 +3,7 @@ program_options:
   automount: true
   notify: true
   password_cache: 30
-  file_manager: alacritty --command yazi
+  file_manager: kitty yazi
 
 notifications:
   # Customize which notifications are shown for how long. Possible

@@ -69,7 +69,7 @@ yay -S ncpamixer
 sudo pacman -S rofi jq
 
 # terminal
-sudo pacman -S alacritty
+sudo pacman -S kitty
 
 # display layout
 sudo pacman -S python-flit-core
