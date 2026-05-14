@@ -24,7 +24,10 @@
         "ebus",
         "finnova",
         "jaas",
+        "kubernetes",
         "logminer",
+        "netshoot",
+        "Netshoot",
         "openapi",
         "sasl",
         "spoud"
@@ -44,5 +47,7 @@
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "go.toolsManagement.autoUpdate": true,
+    "mdb.mcp.server": "autoStartDisabled"
 }

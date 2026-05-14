@@ -15,4 +15,4 @@ bindkey -M menuselect '^[n' vi-forward-char
 bindkey -M menuselect '^[ ' accept-line
 
 # Auto suggestion
-bindkey '^[ ' autosuggest-accept
+bindkey '^ ' autosuggest-accept

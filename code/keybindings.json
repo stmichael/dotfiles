@@ -1,137 +1,38 @@
 [
     // Cursor movement
     {
-        "key": "left",
-        "command": "cursorMove",
-        "args": {
-            "to": "left",
-            "select": true
-        },
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "right",
-        "command": "cursorMove",
-        "args": {
-            "to": "right",
-            "select": true
-        },
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "down",
-        "command": "cursorMove",
-        "args": {
-            "to": "down",
-            "select": true
-        },
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "up",
-        "command": "cursorMove",
-        "args": {
-            "to": "up",
-            "select": true
-        },
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-
-    {
-        "key": "home",
-        "command": "cursorMove",
-        "args": {
-            "to": "wrappedLineStart",
-            "select": true
-        },
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "end",
-        "command": "cursorMove",
-        "args": {
-            "to": "wrappedLineEnd",
-            "select": true
-        },
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "pageup",
-        "command": "cursorPageUpSelect",
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "pagedown",
-        "command": "cursorPageDownSelect",
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-
-    {
-        "key": "ctrl+home",
-        "command": "cursorTopSelect",
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "ctrl+end",
-        "command": "cursorBottomSelect",
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-
-    {
-        "key": "ctrl+left",
-        "command": "cursorWordLeftSelect",
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "ctrl+right",
-        "command": "cursorWordRightSelect",
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-    {
-        "key": "ctrl+shift+left",
+        "key": "ctrl+up",
         "command": "cursorMove",
         "args": {
             "to": "prevBlankLine"
         },
-        "when": "editorTextFocus && !incremental-selection.active"
+        "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+left",
+        "key": "ctrl+shift+up",
         "command": "cursorMove",
         "args": {
             "to": "prevBlankLine",
             "select": true
         },
-        "when": "editorTextFocus && incremental-selection.active"
+        "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+right",
+        "key": "ctrl+down",
         "command": "cursorMove",
         "args": {
             "to": "nextBlankLine"
         },
-        "when": "editorTextFocus && !incremental-selection.active"
+        "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+right",
+        "key": "ctrl+shift+down",
         "command": "cursorMove",
         "args": {
             "to": "nextBlankLine",
             "select": true
         },
-        "when": "editorTextFocus && incremental-selection.active"
-    },
-
-    // Text modification
-    {
-        "key": "alt+space",
-        "command": "incremental-selection.start",
-        "when": "editorTextFocus && !incremental-selection.active"
-    },
-    {
-        "key": "alt+space",
-        "command": "incremental-selection.clear",
-        "when": "editorTextFocus && incremental-selection.active"
+        "when": "editorTextFocus"
     },
 
     // Tab handling
