@@ -39,12 +39,14 @@ hl.config({
   },
 
   animations = {
-    enabled = false,
+    enabled = true,
   },
 
   misc = {
-    force_default_wallpaper = 1,
-    disable_hyprland_logo   = true,
+    force_default_wallpaper  = 1,
+    disable_hyprland_logo    = true,
     disable_splash_rendering = true,
   },
 })
+
+hl.animation({ leaf = "global", enabled = true, speed = 3, bezier = "default" })
