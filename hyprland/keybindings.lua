@@ -25,6 +25,8 @@ hl.bind(mainMod .. " + SHIFT + g", hl.dsp.window.move({ workspace = "r-1" }))
 -- Monitor focus
 hl.bind(mainMod .. " + CTRL + h", hl.dsp.focus({ monitor = "l" }))
 hl.bind(mainMod .. " + CTRL + n", hl.dsp.focus({ monitor = "r" }))
+hl.bind(mainMod .. " + CTRL + SHIFT + h", hl.dsp.window.move({ monitor = "l" }))
+hl.bind(mainMod .. " + CTRL + SHIFT + n", hl.dsp.window.move({ monitor = "r" }))
 
 -- Applications
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
