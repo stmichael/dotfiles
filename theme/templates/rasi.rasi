@@ -1,0 +1,17 @@
+* {
+  text-color: #${text};
+  text-alternate-color: #${text};
+  text-active-color: #${lavender};
+  text-urgent-color: #${red};
+  text-selected-color: #${base};
+
+  background-color: #${base};
+  background-alternate-color: #${mantle};
+  background-active-color: #${base};
+  background-urgent-color: #${base};
+  background-selected-color: #${text};
+
+  border-color: #${text};
+  border-active-color: #${lavender};
+  border-inactive-color: #${overlay0};
+}

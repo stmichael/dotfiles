@@ -1,0 +1,12 @@
+@define-color text-color #${text};
+@define-color text-active-color #${lavender};
+@define-color text-urgent-color #${red};
+
+@define-color background-color #${base};
+
+@define-color border-active-color #${lavender};
+@define-color border-inactive-color #${overlay0};
+
+@define-color state-success-color #${green};
+@define-color state-warning-color #${peach};
+@define-color state-danger-color #${red};

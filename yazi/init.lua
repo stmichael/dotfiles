@@ -12,6 +12,11 @@ Status:children_add(function()
 	}
 end, 500, Status.RIGHT)
 
+require("full-border"):setup {
+	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
+	type = ui.Border.ROUNDED,
+}
+
 require("gvfs"):setup({
   -- (Optional) Allowed keys to select device.
   which_keys = "1234567890qwertyuiopasdfghjklzxcvbnm-=[]\\;',./!@#$%^&*()_+{}|:\"<>?",

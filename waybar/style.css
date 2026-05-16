@@ -1,4 +1,4 @@
-@import 'mocha.css';
+@import '../theme/theme.css';
 
 * {
   font-size: 13px;
@@ -18,11 +18,11 @@ window#waybar {
 }
 
 window#waybar > box {
-  background-color: @base;
+  background-color: @background-color;
   margin: 0 2px 0 2px;
-  border-right: 2px solid @overlay0;
-  border-bottom: 2px solid @overlay0;
-  border-left: 2px solid @overlay0;
+  border-right: 2px solid @border-inactive-color;
+  border-bottom: 2px solid @border-inactive-color;
+  border-left: 2px solid @border-inactive-color;
 }
 
 .modules-left, .modules-center, .modules-right {
@@ -47,22 +47,22 @@ button:hover {
   box-shadow: none;
   text-shadow: none;
 
-  border: 1px solid @lavender;
-  box-shadow: 0 0 4px @lavender, inset 0 0 4px @lavender;
+  border: 1px solid @border-active-color;
+  box-shadow: 0 0 4px @border-inactive-color, inset 0 0 4px @border-inactive-color;
 }
 
 button:hover label {
-  color: @lavender;
+  color: @text-active-color;
 }
 
 label {
-  color: @subtext0;
+  color: @text-color;
 }
 
 #custom-separator {
   padding: 0;
   margin: 0 6px;
-  color: @surface1;
+  color: @subtext0;
   font-size: 23px;
 }
 
@@ -76,11 +76,11 @@ label {
 }
 
 #workspaces .urgent label {
-  color: @red;
+  color: @text-urgent-color;
 }
 
 #workspaces .active label {
-  color: @lavender;
+  color: @text-active-color;
 }
 
 /*
@@ -89,13 +89,13 @@ label {
  * -----------------------
  */
 #battery.charging, #battery.plugged {
-  color: @green;
+  color: @state-success-color;
 }
 
 #battery.warning:not(.charging) {
-  color: @peach;
+  color: @state-warning-color;
 }
 
 #battery.critical:not(.charging) {
-  color: @red;
+  color: @state-danger-color;
 }

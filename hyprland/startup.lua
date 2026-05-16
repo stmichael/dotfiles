@@ -5,7 +5,7 @@ hl.env("EDITOR", "code")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("HYPRSHOT_DIR", "Screenshots")
-hl.env("LG_CONFIG_FILE", "/home/stmichael/.config/lazygit/config.yml,/home/stmichael/.config/lazygit/mocha-lavender.yml")
+hl.env("LG_CONFIG_FILE", "/home/stmichael/.config/lazygit/config.yml,/home/stmichael/.config/theme/theme.lazygit.yml")
 
 hl.on("hyprland.start", function ()
   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
