@@ -58,9 +58,9 @@ move_workspace_to_monitor() {
 
   if [[ $DRY_RUN -eq 1 ]]
   then
-    echo "-> hyprctl dispatch moveworkspacetomonitor $workspace $monitor"
+    echo "-> hyprctl dispatch hl.dsp.workspace.move({ workspace = $workspace, monitor = $monitor })"
   else
-    hyprctl dispatch moveworkspacetomonitor $workspace $monitor > /dev/null
+    hyprctl dispatch "hl.dsp.workspace.move({ workspace = $workspace, monitor = $monitor })"
   fi
 }
 
