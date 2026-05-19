@@ -7,7 +7,7 @@ configuration {
   steal-focus: false;
 
   /* Display */
-  font: "mono 12";
+  font: "Roboto 10";
   show-icons: false;
   scroll-method: 0; /* per page */
   cycle: true;
@@ -19,7 +19,6 @@ configuration {
   display-hyprland-windows: "Windows";
   display-app-groups: "App groups";
   display-drun: "Apps";
-  display-ssh: "SSH";
   display-combi: "All";
 
   /* timeout */
@@ -45,12 +44,6 @@ configuration {
   /* history */
   disable-history: false;
   max-history-size: 25;
-
-  /* SSH */
-  ssh-client: "ssh";
-  ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
-  parse-hosts: false;
-  parse-known-hosts: true;
 
   /* drun */
   drun-match-fields: "name,generic,exec,categories,keywords";

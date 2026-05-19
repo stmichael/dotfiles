@@ -2,6 +2,9 @@
 
 # -> Login as stmichael
 
+# matugen (theme generation)
+sudo pacman -S matugen
+
 # archey
 yay -S archey4
 
