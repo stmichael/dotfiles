@@ -6,8 +6,8 @@ hl.config({
     border_size = 2,
 
     col = {
-      active_border = theme.border.active,
-      inactive_border = theme.border.inactive
+      active_border = theme.primary,
+      inactive_border = theme.surface
     },
 
     resize_on_border = false,
@@ -15,7 +15,7 @@ hl.config({
   },
 
   decoration = {
-    rounding = 0,
+    rounding = 10,
 
     active_opacity = 1.0,
     inactive_opacity = 1.0,
