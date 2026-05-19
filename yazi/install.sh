@@ -9,9 +9,7 @@ source ../utils.sh
 
 link_file ./yazi.toml ~/.config/yazi/yazi.toml
 link_file ./keymap.toml ~/.config/yazi/keymap.toml
-link_file ./theme.toml ~/.config/yazi/theme.toml
 link_file ./init.lua ~/.config/yazi/init.lua
 
 ya pkg add boydaihungst/gvfs
-ya pkg add yazi-rs/flavors:catppuccin-mocha
 ya pkg add yazi-rs/plugins:full-border

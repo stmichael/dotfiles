@@ -1,11 +1,5 @@
 [mgr]
 prepend_keymap = [
-  # ----- Projects ------
-  { on = [ "p", "p" ], run = "cd ~/projects", desc = "Go to base project folder" },
-  { on = [ "p", "s" ], run = "cd ~/projects/spoud", desc = "Go to SPOUD project" },
-  { on = [ "p", "f" ], run = "cd ~/projects/finnova", desc = "Go to Finnova project" },
-  { on = [ "p", "e" ], run = "cd ~/projects/ejpd", desc = "Go to EJPD project" },
-
   # ----- Mount points ------
   { on = ["C"], run = "plugin ouch", desc = "Compress with ouch"},
 
