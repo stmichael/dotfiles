@@ -34,3 +34,8 @@ post_hook = 'makoctl reload'
 input_path = '~/.config/matugen/templates/kitty.conf'
 output_path = '~/.config/kitty/themes/matugen.conf'
 post_hook = "kitty +kitten themes --reload-in=all matugen"
+
+[templates.tmux]
+input_path = '~/.config/matugen/templates/tmux.conf'
+output_path = '~/.config/tmux/colors.conf'
+post_hook = 'tmux source-file ~/.config/tmux/colors.conf'
