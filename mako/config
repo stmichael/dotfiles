@@ -5,28 +5,28 @@ sort=-time
 default-timeout=10000
 ignore-timeout=0
 
-layer=top
-anchor=top-right
-
 on-button-left=invoke-default-action
 on-button-middle=dismiss-group
 on-button-right=dismiss
 on-touch=invoke-default-action
 on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
+layer=top
+anchor=top-right
+
+font=Roboto 10
 format= <b>%s</b>\n%b
-text-alignment=center
+text-alignment=left
 
 icons=1
 max-icon-size=34
 icon-location=left
 actions=1
 
-font= monospace 10
-outer-margin=1
-margin=0
+outer-margin=0
+margin=10
 padding=10
-border-size=1
-border-radius=0
+border-size=0
+border-radius=3
 
-include=~/.config/theme/theme.mako.conf
+include=~/.config/mako/colors.conf

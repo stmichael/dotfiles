@@ -24,3 +24,8 @@ output_path = '~/.config/hypr/colors.lua'
 [templates.hyprlock]
 input_path = '~/.config/matugen/templates/hyprlock.conf'
 output_path = '~/.config/hypr/colors.conf'
+
+[templates.mako]
+input_path = '~/.config/matugen/templates/mako.conf'
+output_path = '~/.config/mako/colors.conf'
+post_hook = 'makoctl reload'
