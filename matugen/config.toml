@@ -20,3 +20,7 @@ output_path = '~/.config/rofi/colors.rasi'
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland.lua'
 output_path = '~/.config/hypr/colors.lua'
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprlock.conf'
+output_path = '~/.config/hypr/colors.conf'
