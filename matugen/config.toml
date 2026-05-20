@@ -47,3 +47,7 @@ output_path = '~/.config/yazi/theme.toml'
 [templates.zsh]
 input_path = '~/.config/matugen/templates/zsh.sh'
 output_path = '~/.config/zsh/theme.zsh'
+
+[templates.lazygit]
+input_path = '~/.config/matugen/templates/lazygit.yml'
+output_path = '~/.config/lazygit/theme.yml'
