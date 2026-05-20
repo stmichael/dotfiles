@@ -43,3 +43,7 @@ post_hook = 'tmux source-file ~/.config/tmux/colors.conf'
 [templates.yazi]
 input_path = '~/.config/matugen/templates/yazi.toml'
 output_path = '~/.config/yazi/theme.toml'
+
+[templates.zsh]
+input_path = '~/.config/matugen/templates/zsh.sh'
+output_path = '~/.config/zsh/theme.zsh'
