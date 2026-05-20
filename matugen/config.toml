@@ -51,3 +51,7 @@ output_path = '~/.config/zsh/theme.zsh'
 [templates.lazygit]
 input_path = '~/.config/matugen/templates/lazygit.yml'
 output_path = '~/.config/lazygit/theme.yml'
+
+[templates.k9s]
+input_path = '~/.config/matugen/templates/k9s.yaml'
+output_path = '~/.config/k9s/skins/matugen.yaml'

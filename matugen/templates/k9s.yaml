@@ -1,0 +1,100 @@
+k9s:
+  body:
+    fgColor: '{{ colors.on_surface.default.hex }}'
+    bgColor: '{{ colors.surface.default.hex }}'
+    logoColor: '{{ colors.on_surface_variant.default.hex }}'
+  prompt:
+    fgColor: '#cdd6f4'
+    bgColor: '#181825'
+    suggestColor: '#89b4fa'
+  help:
+    fgColor: '{{ colors.on_surface.default.hex }}'
+    bgColor: '{{ colors.surface_container.default.hex }}'
+    sectionColor: '{{ colors.secondary.default.hex }}'
+    keyColor: '{{ colors.on_surface.default.hex }}'
+    numKeyColor: '{{ colors.on_surface.default.hex }}'
+  frame:
+    title:
+      fgColor: '{{ colors.primary.default.hex }}'
+      bgColor: '{{ colors.surface_container.default.hex }}'
+      highlightColor: '{{ colors.on_surface.default.hex }}'
+      counterColor: '{{ colors.on_surface.default.hex }}'
+      filterColor: '{{ colors.on_surface.default.hex }}'
+    border:
+      fgColor: '#cba6f7'
+      focusColor: '{{ colors.primary.default.hex }}'
+    menu:
+      fgColor: '{{ colors.on_surface.default.hex }}'
+      keyColor: '{{ colors.tertiary.default.hex }}'
+      numKeyColor: '{{ colors.tertiary.default.hex }}'
+    crumbs:
+      fgColor: '{{ colors.on_surface.default.hex }}'
+      bgColor: '{{ colors.surface_container_high.default.hex }}'
+      activeColor: '{{ colors.primary_container.default.hex }}'
+    status:
+      newColor: '{{ colors.on_surface.default.hex }}'
+      modifyColor: '#b4befe'
+      addColor: '#a6e3a1'
+      pendingColor: '#fab387'
+      errorColor: '{{ colors.error.default.hex }}'
+      highlightColor: '#89dceb'
+      killColor: '#cba6f7'
+      completedColor: '#6c7086'
+  info:
+    fgColor: '#fab387'
+    sectionColor: '#cdd6f4'
+  views:
+    table:
+      fgColor: '#cdd6f4'
+      bgColor: '#1e1e2e'
+      cursorFgColor: '#313244'
+      cursorBgColor: '#45475a'
+      markColor: '#f5e0dc'
+      header:
+        fgColor: '#f9e2af'
+        bgColor: '#1e1e2e'
+        sorterColor: '#89dceb'
+    xray:
+      fgColor: '#cdd6f4'
+      bgColor: '#1e1e2e'
+      cursorColor: '#45475a'
+      cursorTextColor: '#1e1e2e'
+      graphicColor: '#f5c2e7'
+    charts:
+      bgColor: '#1e1e2e'
+      chartBgColor: '#1e1e2e'
+      dialBgColor: '#1e1e2e'
+      defaultDialColors:
+        - '#a6e3a1'
+        - '#f38ba8'
+      defaultChartColors:
+        - '#a6e3a1'
+        - '#f38ba8'
+      resourceColors:
+        cpu:
+          - '#cba6f7'
+          - '#89b4fa'
+        mem:
+          - '#f9e2af'
+          - '#fab387'
+    yaml:
+      keyColor: '#89b4fa'
+      valueColor: '#cdd6f4'
+      colonColor: '#a6adc8'
+    logs:
+      fgColor: '#cdd6f4'
+      bgColor: '#1e1e2e'
+      indicator:
+        fgColor: '#b4befe'
+        bgColor: '#1e1e2e'
+        toggleOnColor: '#a6e3a1'
+        toggleOffColor: '#a6adc8'
+  dialog:
+    fgColor: '#f9e2af'
+    bgColor: '#9399b2'
+    buttonFgColor: '#1e1e2e'
+    buttonBgColor: '#7f849c'
+    buttonFocusFgColor: '#1e1e2e'
+    buttonFocusBgColor: '#f5c2e7'
+    labelFgColor: '#f5e0dc'
+    fieldFgColor: '#cdd6f4'
