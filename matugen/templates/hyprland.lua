@@ -3,4 +3,3 @@ return {
   {{ name }}='{{ value.default.hex }}',
 <* endfor *>
 }
-

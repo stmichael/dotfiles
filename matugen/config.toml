@@ -55,3 +55,8 @@ output_path = '~/.config/lazygit/theme.yml'
 [templates.k9s]
 input_path = '~/.config/matugen/templates/k9s.yaml'
 output_path = '~/.config/k9s/skins/matugen.yaml'
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship.toml'
+output_path = '~/.config/starship/matugen.toml'
+post_hook = 'sed -i -ne "/^# START MATUGEN PALETTE/{p; r /home/stmichael/.config/starship/matugen.toml" -e ":a; n; /^# END MATUGEN PALETTE/p; ba}; p"  ~/.config/starship.toml'

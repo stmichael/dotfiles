@@ -2,43 +2,49 @@
 
 format = """
 $character\
-[\ue0b0](fg:base bg:overlay1)\
+[](fg:surface bg:secondary_container)\
 $username\
-[\ue0b1](bold fg:base bg:overlay1)\
+[](bold fg:surface bg:secondary_container)\
 $directory\
-[\ue0b1](bold fg:base bg:overlay1)\
+[](bold fg:surface bg:secondary_container)\
 $git_branch\
-[\ue0b1](bold fg:base bg:overlay1)\
+[](bold fg:surface bg:secondary_container)\
 $kubernetes\
-[\ue0b0](fg:overlay1 bg:base)\
-\n[ \uf061 ](fg:text)
+[](fg:secondary_container bg:surface)\
+\n[  ](fg:on_surface)
 """
-palette = 'catppuccin_mocha'
+palette = 'matugen'
 
 [character]
 disabled = false
-success_symbol = '[  ](bold fg:green bg:overlay1)[](fg:overlay1)'
-error_symbol = '[  ](bold fg:red bg:overlay1)[](fg:overlay1)'
+success_symbol = '[  ](bold fg:on_primary bg:primary)[](fg:primary)'
+error_symbol = '[  ](bold fg:on_error bg:error)[](fg:error)'
 
 [username]
 show_always = true
-style_user = "fg:text bg:overlay1"
-style_root = "fg:text bg:overlay1"
+style_user = "fg:on_secondary_container bg:secondary_container"
+style_root = "fg:on_secondary_container bg:secondary_container"
 format = '[ $user ]($style)'
 
 [directory]
-style = "fg:text bg:overlay1"
+style = "fg:on_secondary_container bg:secondary_container"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
-symbol = ""
-style = "fg:text bg:overlay1"
+symbol = ""
+style = "fg:on_secondary_container bg:secondary_container"
 format = '[ $symbol $branch ]($style)'
 
 [kubernetes]
 disabled = false
-style = "fg:text bg:overlay1"
+symbol = ""
+style = "fg:on_secondary_container bg:secondary_container"
 format = '[ $symbol $context ]($style)'
+contexts = [
+  { context_pattern = "arn:aws:eks:(?P<region>[^:]+):(?P<account>[^:]+):cluster/(?P<name>.+)", context_alias = "$name ($region)" },
+]
 
+# START MATUGEN PALETTE
+# END MATUGEN PALETTE
