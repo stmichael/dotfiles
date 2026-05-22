@@ -5,66 +5,88 @@
   "spacing": 0,
 
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/language",
-    "hyprland/submap"
+    "group/sound",
+    "group/input"
   ],
   "modules-center": [
-    "pulseaudio",
-    "custom/separator",
-    "mpris"
+    "hyprland/workspaces"
   ],
   "modules-right": [
-    "bluetooth",
-    "network",
-    "custom/separator",
+    "group/connection",
     "custom/cups",
     "custom/disks",
-    "custom/separator",
-    "backlight",
-    "custom/separator",
-    "battery",
-    "power-profiles-daemon",
-    "custom/separator",
-    "cpu",
-    "memory",
-    "custom/separator",
+    "group/power",
     "clock"
   ],
+
+  "group/sound": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "mpris"
+    ]
+  },
+
+  "group/input": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/language",
+      "hyprland/submap"
+    ]
+  },
+
+  "group/connection": {
+    "orientation": "horizontal",
+    "modules": [
+      "bluetooth",
+      "network"
+    ]
+  },
+
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "backlight",
+      "battery",
+      "power-profiles-daemon"
+    ]
+  },
+
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{id}",
     "format-icons": {
-      "default": "\uf4c3",
-      "active": "\uf444"
+      "default": "",
+      "active": ""
     },
     "active-only": true,
     "all-outputs": false
   },
   "hyprland/submap": {
-    "format": "\uf11c {}"
+    "format": " {}"
   },
   "mpris": {
-    "format": "{status_icon}    {dynamic}",
+    "format": "{status_icon}",
     "title-len": 30,
     "artist-len": 15,
     "status-icons": {
-      "playing": "\uf04b",
-      "paused": "\uf04c",
-      "stopped": "\uf04d"
+      "playing": "",
+      "paused": "",
+      "stopped": ""
     },
     "dynamic-order": ["title", "artist"]
   },
   "pulseaudio": {
-    "format": "\uf027 {volume}% {format_source}",
-    "format-muted": "\ueee8 0% {format_source}",
-    "format-source": "\uf130 {volume}%",
-    "format-source-muted": "\uf131 0%",
+    "format": " {volume}% {format_source}",
+    "format-muted": " 0% {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " 0%",
     "on-click": "$TERMINAL -e ncpamixer -t o"
   },
   "bluetooth": {
-    "format-off": "\udb80\udcb2 off",
-    "format-on": "\udb80\udcaf on",
-    "format-connected": "\udb80\udcb1 {device_battery_percentage}%",
+    "format-off": "󰂲",
+    "format-on": "󰂯",
+    "format-connected": "󰂱 {device_battery_percentage}%",
     "tooltip-format": "{num_connections} devices connected",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -72,16 +94,16 @@
     "on-click": "$TERMINAL -e bluetuith"
   },
   "cpu": {
-    "format": "\uf2db {usage}%",
+    "format": " {usage}%",
     "tooltip": false
   },
   "memory": {
-    "format": "\uf0c9 {}%"
+    "format": " {}%"
   },
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["\ue38d", "\ue3d3", "\ue3d1", "\ue3cf", "\ue3ce", "\ue3cd", "\ue3ca", "\ue3c8", "\ue39b"]
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "battery": {
     "interval": 20,
@@ -91,41 +113,41 @@
     },
     "format": "{icon} {capacity}%",
     "format-full": "{icon} {capacity}%",
-    "format-charging": "\uf1e6 {capacity}%",
-    "format-plugged": "\uf1e6 {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+    "format-icons": ["", "", "", "", ""]
   },
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "\uf0e7",
-      "performance": "\uf0e7",
-      "balanced": "\uf24e",
-      "power-saver": "\uf06c"
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
     }
   },
   "network": {
-    "format-wifi": "\uf1eb {essid}",
-    "format-ethernet": "\uf796 {ipaddr}",
-    "format-linked": "\uf796 {ifname} (No IP)",
-    "format-disconnected": "\u26a0 Disconnected"
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ipaddr}",
+    "format-linked": " {ifname} (No IP)",
+    "format-disconnected": "⚠ Disconnected"
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%Y-%m-%d %H:%M}"
   },
   "custom/cups": {
-    "format": "\uf02f {}",
+    "format": " {}",
     "return-type": "json",
     "exec": "$HOME/.config/waybar/modules/cups.sh",
     "interval": 20,
     "tooltip": true
   },
   "custom/disks": {
-    "format": "\udb84\uddf0 {}",
+    "format": "󱇰 {}",
     "return-type": "json",
     "exec": "$HOME/.config/waybar/modules/disks.sh get",
     "interval": 10,
@@ -135,10 +157,5 @@
     "menu-actions": {
       "eject": "$HOME/.config/waybar/modules/disks.sh eject"
     }
-  },
-  "custom/separator": {
-    "format": "|",
-    "interval": "once",
-    "tooltip": false
   }
 }

@@ -60,3 +60,8 @@ output_path = '~/.config/k9s/skins/matugen.yaml'
 input_path = '~/.config/matugen/templates/starship.toml'
 output_path = '~/.config/starship/matugen.toml'
 post_hook = 'sed -i -ne "/^# START MATUGEN PALETTE/{p; r /home/stmichael/.config/starship/matugen.toml" -e ":a; n; /^# END MATUGEN PALETTE/p; ba}; p"  ~/.config/starship.toml'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar.css'
+output_path = '~/.config/waybar/theme.css'
+post_hook = 'pkill -SIGUSR2 waybar'
