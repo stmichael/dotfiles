@@ -1,3 +1,6 @@
 <* for name, value in colors *>
 @define-color {{ name | replace: "_", "-" }} {{ value.default.hex }};
 <* endfor *>
+<* for name, value in custom *>
+@define-color {{ name | replace: "_", "-" }} {{ value.default.hex }};
+<* endfor *>

@@ -1,0 +1,24 @@
+{
+  "custom": {
+    "success": {
+      "default": {
+        "color": "#B2D189"
+      }
+    },
+    "on-success": {
+      "default": {
+        "color": "#203701"
+      }
+    },
+    "caution": {
+      "default": {
+        "color": "#FBB974"
+      }
+    },
+    "on-caution": {
+      "default": {
+        "color": "#492900"
+      }
+    }
+  }
+}

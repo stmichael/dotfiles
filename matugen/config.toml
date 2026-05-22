@@ -13,6 +13,8 @@ expr_postfix = "}}"
 block_prefix = "<*"
 block_postfix = "*>"
 
+import_json_files = ["./custom-colors.json"]
+
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi.rasi'
 output_path = '~/.config/rofi/colors.rasi'
