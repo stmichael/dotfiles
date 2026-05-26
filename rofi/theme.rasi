@@ -1,15 +1,5 @@
 @import 'colors.rasi'
 
-/*****----- Configuration -----*****/
-configuration {
-  show-icons:                 true;
-	window-format:              "{w} · {c} · {t}";
-}
-
-/*****----- Global Properties -----*****/
-* {
-}
-
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
@@ -97,17 +87,15 @@ mode-switcher{
 }
 button {
     height:                      56px;
-    width:                       120px;
-    padding:                     0 24px;
-    border-radius:               10px;
+    width:                       56px;
+    border-radius:               100%;
     background-color:            @secondary-container;
     text-color:                  @on-secondary-container;
     cursor:                      pointer;
 }
 button selected {
-    background-color:            @primary;
-    text-color:                  @on-primary;
-    border-radius:               100%;
+    background-color:            @secondary;
+    text-color:                  @on-secondary;
 }
 
 /*****----- Listview -----*****/

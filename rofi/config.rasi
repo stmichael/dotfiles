@@ -1,5 +1,5 @@
 configuration {
-  modes: "hyprland-windows,drun,app-groups,combi";
+  modes: "window,drun,app-groups,nordvpn,combi";
   threads: 0; /* autodetect threading */
   case-sensitive: false;
   terminal: "rofi-sensible-terminal";
@@ -8,7 +8,7 @@ configuration {
 
   /* Display */
   font: "Roboto 10";
-  show-icons: false;
+  show-icons: true;
   scroll-method: 0; /* per page */
   cycle: true;
   sort: false;
@@ -16,9 +16,10 @@ configuration {
   sidebar-mode: false;
   m: "-4"; /* show on monitor with the focused window */
 
-  display-hyprland-windows: "Windows";
-  display-app-groups: "App groups";
-  display-drun: "Apps";
+  display-window: "";
+  display-app-groups: "";
+  display-drun: "";
+  display-nordvpn: "󰢭";
   display-combi: "All";
 
   /* timeout */
@@ -37,9 +38,9 @@ configuration {
   normalize-match: true;
 
   /* Combi */
-  combi-modes: "hyprland-windows,drun,app-groups";
+  combi-modes: "window,drun,app-groups,nordvpn";
   combi-hide-mode-prefix: false;
-  combi-display-format: "{mode}: {text}";
+  combi-display-format: "{text}";
 
   /* history */
   disable-history: false;
@@ -66,9 +67,8 @@ configuration {
   run-shell-command: "{terminal} -e {cmd}";
 
   /* window */
-/*  window-command: "wmctrl -i -R {window}"; */
   window-match-fields: "all";
-  window-format: "{c} - {t}";
+  window-format: "{c} {t}";
   window-thumbnail: false;
 
   /* filebrowser */
