@@ -104,7 +104,6 @@ nmcli device wifi connect WN-AF35C0 password <password>
 
 # User setup
 EDITOR=vim sudoedit /etc/sudoers
-# -> uncomment line `%sudo ALL=(ALL:ALL) ALL`
-groupadd sudo
-useradd -m -G sudo -s /bin/bash stmichael
+# -> uncomment line `%wheel ALL=(ALL:ALL) ALL`
+useradd -m -G wheel -s /bin/bash stmichael
 passwd stmichael
