@@ -39,6 +39,7 @@
     "orientation": "horizontal",
     "modules": [
       "bluetooth",
+      "custom/vpn",
       "network"
     ]
   },
@@ -134,6 +135,12 @@
     "format-ethernet": " {ipaddr}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "⚠ Disconnected"
+  },
+  "custom/vpn": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/nordvpn.sh",
+    "interval": 10
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
