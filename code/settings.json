@@ -4,7 +4,7 @@
     "files.insertFinalNewline": true,
     "explorer.confirmDragAndDrop": false,
     "editor.tabSize": 2,
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Matugen",
     "workbench.preferredDarkColorTheme": "Houston",
     "workbench.preferredLightColorTheme": "Vitesse Light",
     "redhat.telemetry.enabled": false,
@@ -36,7 +36,8 @@
     "database-client.autoSync": true,
     "workbench.startupEditor": "none",
     "vs-kubernetes": {
-        "vscode-kubernetes.minikube-path-linux": "/home/stmichael/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+        "vscode-kubernetes.minikube-path-linux": "/home/stmichael/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.crd-code-completion": "disabled"
     },
     "[dockercompose]": {
         "editor.insertSpaces": true,

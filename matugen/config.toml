@@ -67,3 +67,11 @@ post_hook = 'sed -i -ne "/^# START MATUGEN PALETTE/{p; r /home/stmichael/.config
 input_path = '~/.config/matugen/templates/waybar.css'
 output_path = '~/.config/waybar/theme.css'
 post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.vscode-raw]
+input_path = '~/.config/matugen/templates/vscode-colors'
+output_path = '~/.cache/matugen/vscode-colors'
+
+[templates.vscode-json]
+input_path = '~/.config/matugen/templates/vscode-colors.json'
+output_path = '~/.cache/matugen/vscode-colors.json'
