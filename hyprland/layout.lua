@@ -1,13 +1,9 @@
 hl.config({
   general = {
-    layout = dwindle
+    layout = "dwindle",
   },
 
   dwindle = {
-    preserve_split = true
+    preserve_split = true,
   },
-
-  master = {
-    new_status = "master"
-  }
 })
