@@ -1,5 +1,5 @@
 configuration {
-  modes: "window,drun,app-groups,nordvpn,combi";
+  modes: "combi,window,drun,app-groups,nordvpn,calc";
   threads: 0; /* autodetect threading */
   case-sensitive: false;
   terminal: "rofi-sensible-terminal";
@@ -20,6 +20,7 @@ configuration {
   display-app-groups: "";
   display-drun: "";
   display-nordvpn: "󰢭";
+  display-calc: "󰪚";
   display-combi: "All";
 
   /* timeout */

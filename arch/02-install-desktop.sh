@@ -66,7 +66,7 @@ systemctl --user start pipewire-pulse wireplumber
 yay -S ncpamixer
 
 # application launcher
-sudo pacman -S rofi jq
+sudo pacman -S rofi rofi-calc jq
 
 # terminal
 sudo pacman -S kitty
