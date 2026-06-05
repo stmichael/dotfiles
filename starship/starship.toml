@@ -11,7 +11,7 @@ $git_branch\
 [](bold fg:surface bg:secondary_container)\
 $kubernetes\
 [](fg:secondary_container bg:surface)\
-\n[  ](fg:on_surface)
+\n[  ](fg:on_surface)
 """
 palette = 'matugen'
 
