@@ -13,3 +13,4 @@ link_file ./nordvpn/nordvpn ~/bin/nordvpn
 link_file ./nas/nas ~/bin/nas
 link_file ./android/android ~/bin/android
 link_file ./battery/battery ~/bin/battery
+link_file ./monitor ~/bin/monitor

@@ -60,7 +60,7 @@
       "default": "",
       "active": ""
     },
-    "active-only": true,
+    "active-only": false,
     "all-outputs": false
   },
   "hyprland/submap": {
