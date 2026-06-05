@@ -58,36 +58,42 @@ local function find_presentation_monitor(monitors)
   return nil
 end
 
-function M.distribute()
+function M.apply()
   local monitors = get_active_monitors()
   if #monitors == 1 then
-    M.apply_one_monitor_distribution()
+    M.apply_one_monitor_layout()
   elseif #monitors == 2 then
     if find_presentation_monitor(monitors) ~= nil then
-      M.apply_presentation_distribution()
+      M.apply_presentation_layout()
     else
-      M.apply_two_monitor_distribution()
+      M.apply_two_monitor_layout()
     end
   elseif #monitors == 3 then
-    M.apply_three_monitor_distribution()
+    M.apply_three_monitor_layout()
   else
-    hl.dispatch(hl.dsp.exec_cmd("notify-send 'Don\'t know how to distribute to " .. #monitors .. " monitors'"))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send 'Cannot apply workspaces to " .. #monitors .. " monitors'"))
   end
 end
 
-function M.apply_one_monitor_distribution()
-  local laptop_monitor = find_laptop_monitor(get_active_monitors())
+function M.apply_one_monitor_layout()
+  local monitors = get_active_monitors()
+  local laptop_monitor = find_laptop_monitor(monitors)
   move_workspace_to_monitor(1, laptop_monitor.id)
   move_workspace_to_monitor(2, laptop_monitor.id)
   move_workspace_to_monitor(3, laptop_monitor.id)
   move_workspace_to_monitor(4, laptop_monitor.id)
   move_workspace_to_monitor(5, laptop_monitor.id)
 
-  hl.dispatch(hl.dsp.exec_cmd("notify-send 'Applied one monitor layout'"))
+  hl.dispatch(hl.dsp.exec_cmd("notify-send 'One monitor layout'"))
 end
 
-function M.apply_two_monitor_distribution()
+function M.apply_two_monitor_layout()
   local monitors = get_active_monitors()
+  if #monitors < 2 then
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -u critical 'Only " .. #monitors .. " monitor(s) available'"))
+    return
+  end
+
   local laptop_monitor = find_laptop_monitor(monitors)
   local other_monitor = find_non_laptop_monitors(monitors)[1]
 
@@ -97,11 +103,16 @@ function M.apply_two_monitor_distribution()
   move_workspace_to_monitor(4, other_monitor.id)
   move_workspace_to_monitor(5, other_monitor.id)
 
-  hl.dispatch(hl.dsp.exec_cmd("notify-send 'Applied two monitor layout'"))
+  hl.dispatch(hl.dsp.exec_cmd("notify-send 'Two monitor layout'"))
 end
 
-function M.apply_presentation_distribution()
+function M.apply_presentation_layout()
   local monitors = get_active_monitors()
+  if #monitors < 2 then
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -u critical 'Only " .. #monitors .. " monitor(s) available'"))
+    return
+  end
+
   local laptop_monitor = find_laptop_monitor(monitors)
   local other_monitor = find_non_laptop_monitors(monitors)[1]
 
@@ -111,11 +122,16 @@ function M.apply_presentation_distribution()
   move_workspace_to_monitor(4, other_monitor.id)
   move_workspace_to_monitor(5, laptop_monitor.id)
 
-  hl.dispatch(hl.dsp.exec_cmd("notify-send 'Applied presentation layout'"))
+  hl.dispatch(hl.dsp.exec_cmd("notify-send 'Presentation layout'"))
 end
 
-function M.apply_three_monitor_distribution()
+function M.apply_three_monitor_layout()
   local monitors = get_active_monitors()
+  if #monitors < 3 then
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -u critical 'Only " .. #monitors .. " monitor(s) available'"))
+    return
+  end
+
   local laptop_monitor = find_laptop_monitor(monitors)
   local other_monitor1 = find_non_laptop_monitors(monitors)[1]
   local other_monitor2 = find_non_laptop_monitors(monitors)[2]
@@ -126,7 +142,7 @@ function M.apply_three_monitor_distribution()
   move_workspace_to_monitor(4, other_monitor2.id)
   move_workspace_to_monitor(5, other_monitor2.id)
 
-  hl.dispatch(hl.dsp.exec_cmd("notify-send 'Applied three monitor layout'"))
+  hl.dispatch(hl.dsp.exec_cmd("notify-send 'Three monitor layout'"))
 end
 
 return M

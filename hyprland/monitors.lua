@@ -15,7 +15,7 @@ hl.monitor({
 })
 
 local function monitors_changed()
-  workspaces.distribute()
+  workspaces.apply()
 end
 
 monitors_changed()

@@ -1,5 +1,5 @@
 configuration {
-  modes: "combi,window,drun,app-groups,nordvpn,calc";
+  modes: "combi,window,drun,app-groups,nordvpn,calc,workspaces";
   threads: 0; /* autodetect threading */
   case-sensitive: false;
   terminal: "rofi-sensible-terminal";
@@ -21,6 +21,7 @@ configuration {
   display-drun: "";
   display-nordvpn: "󰢭";
   display-calc: "󰪚";
+  display-workspaces: "󰍹";
   display-combi: "All";
 
   /* timeout */
@@ -39,7 +40,7 @@ configuration {
   normalize-match: true;
 
   /* Combi */
-  combi-modes: "window,drun,app-groups,nordvpn";
+  combi-modes: "window,drun,app-groups,nordvpn,workspaces";
   combi-hide-mode-prefix: false;
   combi-display-format: "{text}";
 
@@ -62,21 +63,10 @@ configuration {
     parse-system: true;
   }
 
-  /* run */
-  run-command: "{cmd}";
-  run-list-command: "";
-  run-shell-command: "{terminal} -e {cmd}";
-
   /* window */
   window-match-fields: "all";
   window-format: "{c} {t}";
   window-thumbnail: false;
-
-  /* filebrowser */
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
 
   /* keybindings */
   kb-mode-next: "Control+Page_Down";
@@ -84,4 +74,5 @@ configuration {
   kb-row-left: "";
   kb-row-right: "";
 }
+
 @theme "theme"
