@@ -96,3 +96,6 @@ sudo pacman -S qbittorrent
 # enable virtualization in BIOS first
 sudo pacman -S virtualbox virtualbox-host-modules-arch
 sudo modprobe vboxdrv
+
+# pass
+sudo pacman -S pass direnv
