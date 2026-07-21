@@ -72,8 +72,7 @@ sudo pacman -S rofi rofi-calc jq
 sudo pacman -S kitty
 
 # display layout
-sudo pacman -S python-flit-core
-yay -S wlr-layout-ui
+sudo pacman -S wdisplays
 
 # notification
 sudo pacman -S mako libnotify

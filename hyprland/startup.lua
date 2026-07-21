@@ -8,6 +8,8 @@ hl.env("HYPRSHOT_DIR", "Screenshots")
 hl.env("LG_CONFIG_FILE", "/home/stmichael/.config/lazygit/config.yml,/home/stmichael/.config/lazygit/theme.yml")
 
 hl.on("hyprland.start", function ()
+  hl.exec_cmd("systemctl --user start hyprland-session.target")
+
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
   hl.exec_cmd("waybar")
@@ -17,4 +19,8 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("wl-paste --type image --watch cliphist store")
   hl.exec_cmd("udiskie")
   hl.exec_cmd("battery check")
+end)
+
+hl.on("hyprland.shutdown", function()
+  os.execute("systemctl --user stop hyprland-session.target && sleep 0.1")
 end)
