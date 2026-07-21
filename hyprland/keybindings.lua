@@ -43,7 +43,7 @@ hl.define_submap("terminate", function()
   hl.bind("escape", hl.dsp.submap("reset"))
 
   hl.bind("c", function()
-    hl.dispatch(hl.dsp.window.kill({ window = "activewindow" }))
+    hl.dispatch(hl.dsp.window.close({ window = "activewindow" }))
     hl.dispatch(hl.dsp.submap("reset"))
   end)
   hl.bind("l", function()
