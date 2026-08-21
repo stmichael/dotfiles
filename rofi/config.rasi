@@ -1,5 +1,5 @@
 configuration {
-  modes: "combi,window,drun,app-groups,nordvpn,calc,workspaces";
+  modes: "combi,window,drun,app-groups,nordvpn,calc,monitor-layout,pass";
   threads: 0; /* autodetect threading */
   case-sensitive: false;
   terminal: "rofi-sensible-terminal";
@@ -21,7 +21,8 @@ configuration {
   display-drun: "";
   display-nordvpn: "󰢭";
   display-calc: "󰪚";
-  display-workspaces: "󰍹";
+  display-monitor-layout: "󰍹";
+  display-pass: "";
   display-combi: "All";
 
   /* timeout */
@@ -40,7 +41,7 @@ configuration {
   normalize-match: true;
 
   /* Combi */
-  combi-modes: "window,drun,app-groups,nordvpn,workspaces";
+  combi-modes: "window,drun,app-groups,nordvpn,monitor-layout,pass";
   combi-hide-mode-prefix: false;
   combi-display-format: "{text}";
 
