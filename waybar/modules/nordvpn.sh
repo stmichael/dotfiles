@@ -1,8 +1,8 @@
 #!/bin/bash
 
-nmcli connection show tun0 > /dev/null 2>&1
+connected=$(nordvpn status | grep "Status:")
 
-if [ $? -eq 0 ]
+if [[ "$connected" == "Status: Connected"*  ]]
 then
   echo "{\"text\":\"󰢭\"}"
 else

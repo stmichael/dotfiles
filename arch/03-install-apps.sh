@@ -99,3 +99,6 @@ sudo modprobe vboxdrv
 
 # pass
 sudo pacman -S pass direnv
+
+# NordVPN
+yay -S nordvpn
